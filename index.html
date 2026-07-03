@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 
-  <!-- ===============================================================
+  <!-- ================================================================
        ▸ META DI BASE
        charset → codifica UTF-8 (supporta accenti e caratteri speciali)
        viewport → rende il sito responsive su tutti i dispositivi
@@ -28,7 +28,7 @@
   <meta property="og:title"       content="Il Sole – Cooperativa Sociale">
   <meta property="og:description" content="Comunità Alloggio Il Sole a Napoli: servizi educativi, inclusione sociale e sostegno ai minori.">
   <meta property="og:type"        content="website">
-  <meta property="og:image"       content="https://i.ibb.co/Lhpfb1bg/Progetto-senza-titolo-4.png">
+  <meta property="og:image"       content="https://i.ibb.co/SDVWpNw5/Progetto-senza-titolo-9-removebg-preview.png">
 
   <!-- ================================================================
        ▸ SCHEMA.ORG – JSON-LD (dati strutturati per Google)
@@ -40,7 +40,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Il Sole – Cooperativa Sociale",
-    "logo": "https://i.ibb.co/Lhpfb1bg/Progetto-senza-titolo-4.png",
+    "logo": "https://i.ibb.co/SDVWpNw5/Progetto-senza-titolo-9-removebg-preview.png",
     "description": "Cooperativa Sociale Il Sole, Napoli – servizi educativi e sociali per minori.",
     "address": {
       "@type": "PostalAddress",
@@ -56,83 +56,63 @@
   </script>
 
   <!-- ================================================================
-       ▸ GOOGLE FONTS
-       Cormorant Garamond → serif elegante per i titoli (display face):
-         crea calore, tradizione e autorevolezza istituzionale.
-       Inter → sans-serif moderna per il corpo testo: alta leggibilità
-         anche a dimensioni piccole su tutti gli schermi.
+       ▸ GOOGLE FONTS (RIMOSSO – USO TIMES)
   ================================================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+  <!-- Nessun font esterno necessario -->
 
   <!-- ================================================================
+       ▸ FAVICON + APPLE ICON
+  ================================================================ -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/SDVWpNw5/Progetto-senza-titolo-9-removebg-preview.png">
+  <link rel="apple-touch-icon" href="https://i.ibb.co/SDVWpNw5/Progetto-senza-titolo-9-removebg-preview.png">
+
+</head>
+
+</head>
+
+<!-- ================================================================
        ▸▸▸  FOGLIO DI STILE GLOBALE  ◂◂◂
   ================================================================ -->
-  <style>
+<style>
 
-    /* ----------------------------------------------------------------
-       RESET & BOX MODEL
-       Azzeramento dei margini/padding di default del browser.
-       box-sizing: border-box → padding e bordi sono inclusi nella
-       larghezza/altezza dell'elemento (comportamento più prevedibile).
-    ---------------------------------------------------------------- */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* ----------------------------------------------------------------
-       CUSTOM PROPERTIES (variabili CSS)
-       Definite su :root → disponibili ovunque nel documento.
-       Modificare qui un colore lo aggiorna in tutto il sito.
+  :root {
+    /* Palette colori (immutata) */
+    --sun:        #F7C325;
+    --amber:      #E07A1A;
+    --navy:       #1A2847;
+    --blue:       #2C4E8C;
+    --cream:      #FDFAF3;
+    --off-white:  #FFFFFF;
+    --white:      #FFFFFF;
+    --grey:       #5C6070;
+    --grey-light: #EDECF0;
+    --gold-pale:  #FFF6D6;
+    --deep-blue:   #0F1B33;
+    --amber-light: #F2A65A;
+    --warm-cream:  #FFF3D4;
+    --dust-blue:   #6A85B6;
+    --grey-blue:   #7A8194;
+    --gold-dark:   #C89B3C;
 
-       Palette solare:
-         --sun       → Giallo sole (accento primario, energia)
-         --amber     → Arancio caldo (CTA, bottoni, hover)
-         --navy      → Blu notte istituzionale (testo principale, header)
-         --blue      → Blu medio professionale (sottolineature, link)
-         --cream     → Crema chiarissimo (sfondo base della pagina)
-         --off-white → Bianco leggermente caldo (sfondo sezioni alternate)
-         --white     → Bianco puro (card, superfici elevate)
-         --grey      → Grigio per testo secondario e legende
-         --gold-pale → Tono dorato pallido per sfondi in evidenza
-    ---------------------------------------------------------------- */
-    :root {
-      --sun:        #F7C325;   /* Giallo sole brillante                  */
-      --amber:      #E07A1A;   /* Arancio caldo – azione e calore        */
-      --navy:       #1A2847;   /* Blu notte istituzionale – autorità     */
-      --blue:       #2C4E8C;   /* Blu medio – link, dettagli             */
-      --cream:      #FDFAF3;   /* Crema calda – sfondo pagina            */
-      --off-white:  #FFFFFF;   /* Bianco puro – sezioni alternate        */
-      --white:      #FFFFFF;
-      --grey:       #5C6070;   /* Grigio medio – testo secondario        */
-      --grey-light: #EDECF0;   /* Grigio chiaro – bordi, separatori      */
-      --gold-pale:  #FFF6D6;   /* Oro pallido – highlight box            */
-       --deep-blue:   #0F1B33;  /* Blu profondo elegante per titoli       */
-        --amber-light: #F2A65A;  /* Arancio tenue per hover e dettagli     */
-        --warm-cream:  #FFF3D4;  /* Crema calda per sfondi morbidi         */
-        --dust-blue:   #6A85B6;  /* Blu polvere per elementi secondari     */
-        --grey-blue:   #7A8194;  /* Grigio-blu per testo meno importante   */
-        --gold-dark:   #C89B3C;  /* Oro scuro per dettagli premium         */
+    /* Tipografia aggiornata */
+    --font-display: 'Times New Roman', Times, serif;
+    --font-body:    'Times New Roman', Times, serif;
 
+    /* Spaziatura e forma */
+    --radius:     12px;
+    --radius-lg:  20px;
+    --shadow-sm:  0 2px 8px rgba(0,0,0,.06);
+    --shadow-md:  0 6px 20px rgba(0,0,0,.09);
+    --shadow-lg:  0 16px 40px rgba(0,0,0,.13);
 
-      /* Tipografia */
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Inter', system-ui, sans-serif;
-
-      /* Spaziatura e forma */
-      --radius:     12px;
-      --radius-lg:  20px;
-      --shadow-sm:  0 2px 8px rgba(0,0,0,.06);
-      --shadow-md:  0 6px 20px rgba(0,0,0,.09);
-      --shadow-lg:  0 16px 40px rgba(0,0,0,.13);
-
-      /* Transizione globale per hover */
-      --ease: all .4s cubic-bezier(.25,.8,.25,1);
-    }
+    --ease: all .4s cubic-bezier(.25,.8,.25,1);
+  }
 
     /* ----------------------------------------------------------------
        BASE BODY
@@ -246,7 +226,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgb(26, 40, 71);
+      background: #6a85b7;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--grey-light);
@@ -274,7 +254,7 @@
     }
 
     .logo-img {
-      height: 90px;
+      height: 110px;
       width: auto;
       transition: var(--ease);
     }
@@ -283,7 +263,7 @@
 
     .logo-text {
       font-family: var(--font-display);
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
       color: var(--cream);
       line-height: 1.05;
@@ -962,63 +942,294 @@
     /* ================================================================
        ▸ RESPONSIVE – TABLET (≤ 920px)
     ================================================================ */
-    @media (max-width: 920px) {
+   @media (max-width: 920px) {
 
-      /* Navbar: nasconde i link desktop, mostra hamburger */
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .mobile-menu { display: flex; }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: .8rem 5vw;
+  }
 
-      /* Hero e sezioni a due colonne: una sola colonna */
-      .hero-inner,
-      .two-col,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2.2rem;
-      }
+  nav {
+    width: 100%;
+    margin-left: 0;
+  }
 
-      #hero { padding: 80px 0 70px; }
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: .8rem 1.5rem;
+    font-size: .9rem;
+  }
 
-      /* Il sole decorativo si ridimensiona */
-      #hero::before {
-        width: 360px;
-        height: 360px;
-        top: -60px;
-        right: -40px;
-      }
-    }
 
+  .hero-inner,
+  .two-col,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+}
     /* ================================================================
        ▸ RESPONSIVE – MOBILE (≤ 600px)
     ================================================================ */
     @media (max-width: 600px) {
 
-      section { padding: 60px 0; }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .hero-title { font-size: 2.2rem; }
+  nav {
+    width: 100%;
+  }
 
-      .section-title { font-size: 1.9rem; }
+  .nav-links {
+    justify-content: center;
+    gap: .7rem 1.2rem;
+    font-size: .8rem;
+    max-width: 360px;
+    margin: 0 auto;
+  }
 
-      .logo-img { height: 44px; }
-      .logo-text { font-size: 1.5rem; }
+  .logo-img {
+    height: 110px;
+  }
 
-      .btn-primary,
-      .btn-outline {
-        padding: .8rem 1.6rem;
-        font-size: .82rem;
-      }
+  .logo-text {
+    font-size: 3rem;
+  }
 
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
+} /* ← QUESTA MANCAVA */
 
-      .info-strip {
-        flex-direction: column;
-        gap: 1rem;
-      }
 
-      .mobile-menu a { font-size: 1.7rem; }
-    }
+/* ================================================================
+   ▸ BOTTONI GLOBALI (FUNZIONANO SEMPRE)
+================================================================ */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: .9rem 1.6rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--ease);
+  text-align: center;
+  border: none;
+}
+
+/* Primario */
+.btn-primary {
+  background: var(--amber);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--amber-light);
+  transform: translateY(-3px);
+}
+
+/* Secondario */
+.btn-secondary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--deep-blue);
+  transform: translateY(-3px);
+}
+
+/* ================================================================
+   ▸ BOTTONI GLOBALI (FUNZIONANO SEMPRE)
+================================================================ */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: .9rem 1.6rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--ease);
+  text-align: center;
+  border: none;
+}
+
+/* Primario */
+.btn-primary {
+  background: var(--amber);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--amber-light);
+  transform: translateY(-3px);
+}
+
+/* Secondario – versione standard (fuori dai modali) */
+.btn-secondary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--deep-blue);
+  transform: translateY(-3px);
+}
+/* ================================================================
+   ▸ LAVORA CON NOI – CARD STILE COERENTE
+================================================================ */
+#contatti .work-card {
+  background: var(--gold-pale);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--grey-light);
+  transition: var(--ease);
+  margin-top: 2.4rem;
+}
+
+#contatti .work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Titolo */
+#contatti .work-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+  margin-bottom: .8rem;
+}
+
+/* Testo descrittivo */
+#contatti .work-card p {
+  color: var(--cream);
+  font-size: .97rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+/* Pulsante modulo candidatura */
+#contatti .work-card .btn-primary {
+  display: inline-block;
+  margin-top: .6rem;
+  padding: .9rem 1.6rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--amber);
+  color: var(--white);
+  transition: var(--ease);
+  text-align: center;
+}
+
+#contatti .work-card .btn-primary:hover {
+  background: var(--amber-light);
+  transform: translateY(-3px);
+}
+
+/* ================================================================
+   ▸ RESPONSIVE – MOBILE (≤ 600px)
+================================================================ */
+@media (max-width: 600px) {
+  #contatti .work-card {
+    padding: 1.6rem;
+  }
+
+  #contatti .work-card h3 {
+    font-size: 1.3rem;
+  }
+
+  #contatti .work-card p {
+    font-size: .9rem;
+    line-height: 1.6;
+  }
+
+  #contatti .work-card .btn-primary {
+    width: 100%;
+    padding: .85rem 1.2rem;
+    font-size: .95rem;
+  }
+}
+/* ================================================================
+   ▸ RIGHE COPIA – VERSIONE DEFINITIVA
+================================================================ */
+.modal-box .copy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: .8rem 1rem;
+  background: var(--gold-pale);
+  border-radius: var(--radius);
+  border: 1px solid var(--grey-light);
+  transition: var(--ease);
+}
+
+.modal-box .copy-row:hover {
+  background: var(--amber-light);
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.modal-box .copy-row p {
+  flex: 1;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ================================================================
+   ▸ BOTTONE COPIA – VERSIONE DEFINITIVA
+================================================================ */
+.copy-btn {
+  background: var(--navy) ;
+  color: var(--white) ;
+  border: none ;
+  padding: .55rem 1rem ;
+  border-radius: var(--radius) ;
+  font-family: var(--font-body) ;
+  font-size: .9rem ;
+  font-weight: 600 ;
+  cursor: pointer ;
+  transition: var(--ease) ;
+  white-space: nowrap ;
+  width: auto ;
+  margin-top: 0 ;
+}
+
+.copy-btn:hover {
+  background: var(--deep-blue) ;
+  transform: translateY(-2px);
+}
+
+/* ================================================================
+   ▸ MOBILE
+================================================================ */
+@media (max-width: 600px) {
+  .modal-box .copy-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-box .copy-btn {
+    width: 100% !important;
+    text-align: center;
+    margin-top: .6rem !important;
+  }
+}
+
 
   </style>
 </head>
@@ -1035,7 +1246,7 @@
 
       <!-- ---- Logo cliccabile → torna in cima ---- -->
       <a href="#hero" class="logo-wrap" aria-label="Homepage Il Sole">
-        <img src="https://i.ibb.co/Lhpfb1bg/Progetto-senza-titolo-4.png"
+        <img src="https://i.ibb.co/8tmX6nY/Progetto-senza-titolo-7.png"
              class="logo-img" alt="Logo Cooperativa Sociale Il Sole" loading="lazy">
         <span class="logo-text">
           Il Sole
@@ -1135,45 +1346,50 @@
   <!-- ================================================================
        ▸ CHI SIAMO
   ================================================================ -->
-  <section id="chi-siamo" class="bg-cream">
-    <div class="container two-col">
+<section id="chi-siamo" class="bg-cream">
+  <div class="container two-col">
 
-      <!-- Testo principale -->
-      <div class="reveal">
-        <span class="eyebrow">Chi siamo</span>
-        <h2 class="section-title">Presentazione della<br>Cooperativa Sociale Il Sole</h2>
-        <div class="section-line"></div>
+    <!-- Testo principale -->
+    <div class="reveal">
+      <span class="eyebrow">Chi siamo</span>
+      <h2 class="section-title">Presentazione della<br>Cooperativa Sociale Il Sole</h2>
+      <div class="section-line"></div>
 
-        <p class="section-text">
-          L'Ente titolare della Comunità Alloggio è la <strong>Cooperativa Sociale Il Sole</strong>.
-          Nasce nel gennaio 2010 con lo scopo di offrire servizi sociali, sanitari ed educativi,
-          orientati ai bisogni di persone in condizioni di marginalità, svantaggio sociale,
-          devianza e rischio di emarginazione, favorendone la promozione umana e l'integrazione sociale.
-        </p>
-        <p class="section-text">
-          La nostra missione è accompagnare ogni individuo in un percorso di crescita e autonomia,
-          costruendo progetti educativi personalizzati in collaborazione con i servizi territoriali
-          e la rete locale.
-        </p>
-      </div>
+      <p class="section-text">
+        La <strong>Cooperativa Sociale Il Sole</strong>, fondata nel gennaio 2010, opera con l'obiettivo di offrire accoglienza, tutela e percorsi educativi rivolti a minori che vivono situazioni di fragilità personale, familiare o sociale.
+      </p>
 
-      <!-- Card visione -->
-      <div class="card reveal delay-2">
-        <h3>La nostra visione</h3>
-        <p>
-          Crediamo che ogni persona, anche quando ha vissuto esperienze difficili o
-          contesti familiari complessi, possa intraprendere un percorso autentico di
-          crescita, autonomia e recupero.
-        </p>
-        <p>
-          Per questo costruiamo progetti educativi individualizzati, in collaborazione
-          con i servizi invianti e con la rete territoriale, per offrire opportunità
-          concrete di cambiamento.
-        </p>
-      </div>
+      <p class="section-text">
+        Da oltre quindici anni rappresentiamo un punto di riferimento nel settore socio‑educativo, promuovendo interventi fondati sul rispetto della persona, sulla professionalità e sulla costruzione di relazioni significative.
+      </p>
 
+      <p class="section-text">
+        Gestiamo due comunità alloggio per minori, <strong>"L'Armonia del Sole"</strong> e <strong>"I Ragazzi del Sole"</strong>, ambienti protetti e accoglienti nei quali gli adolescenti possono trovare sicurezza, ascolto e opportunità di crescita. Ogni percorso è personalizzato e realizzato da un'équipe qualificata che opera in stretta collaborazione con i servizi sociali, le istituzioni e le famiglie, quando possibile.
+      </p>
+
+      <p class="section-text">
+        Il nostro lavoro è orientato a favorire il benessere psicofisico, la crescita personale, l'inclusione sociale e il raggiungimento dell'autonomia, valorizzando le capacità e le risorse di ogni ragazzo.
+      </p>
     </div>
-  </section>
+
+    <!-- Card visione -->
+    <div class="card reveal delay-2">
+      <h3>La nostra visione</h3>
+      <p>
+        Crediamo che ogni persona, anche quando ha vissuto esperienze difficili o
+        contesti familiari complessi, possa intraprendere un percorso autentico di
+        crescita, autonomia e recupero.
+      </p>
+      <p>
+        Per questo costruiamo progetti educativi individualizzati, in collaborazione
+        con i servizi invianti e con la rete territoriale, per offrire opportunità
+        concrete di cambiamento.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- ================================================================
        ▸ ACCESSO ALLA COMUNITÀ
@@ -1209,258 +1425,440 @@
 
   <!-- ================================================================
        ▸ SERVIZI OFFERTI
-  ================================================================ -->
-  <section id="servizi" class="bg-cream">
-    <div class="container reveal">
+================================================================ -->
+<section id="servizi" class="bg-cream">
+  <div class="container reveal">
 
-      <span class="eyebrow">Servizi</span>
-      <h2 class="section-title">I servizi della<br>Comunità Alloggio</h2>
-      <div class="section-line"></div>
+    <span class="eyebrow">Servizi</span>
+    <h2 class="section-title">I nostri servizi</h2>
+    <div class="section-line"></div>
 
-      <p class="section-text">
-        La Comunità Alloggio "Il Sole" offre un sistema integrato di servizi educativi,
-        relazionali e di supporto, in collaborazione con la rete territoriale e centri specialistici.
-      </p>
+    <p class="section-text">
+      I servizi della Cooperativa Sociale <strong>IL SOLE</strong> rappresentano il nostro impegno quotidiano
+      a favore dei minori, delle famiglie e della comunità. Attraverso interventi educativi, di sostegno
+      e di accompagnamento, promuoviamo percorsi di inclusione, autonomia e benessere, rispondendo ai
+      bisogni delle persone con professionalità, competenza e attenzione.
+    </p>
 
-      <!-- Grid dei servizi: auto-fit adatta le colonne all'ampiezza -->
-      <div class="services-grid">
+    <p class="section-text">
+      Lavoriamo in collaborazione con i servizi territoriali e con professionisti qualificati, costruendo
+      percorsi personalizzati che valorizzano le risorse di ogni persona e favoriscono relazioni positive
+      all'interno della comunità.
+    </p>
 
-        <div class="service-card reveal delay-1">
-          <span class="service-icon" aria-hidden="true">🏫</span>
-          <h3>Integrazione sul territorio</h3>
-          <p>
-            Inserimento scolastico, mediazione culturale, partecipazione a gruppi sportivi
-            e oratorio, attività ricreative per favorire l'inclusione e la vita di comunità.
-          </p>
-        </div>
+    <!-- Grid dei servizi -->
+    <div class="services-grid">
 
-        <div class="service-card reveal delay-2">
-          <span class="service-icon" aria-hidden="true">🩺</span>
-          <h3>Supporto specialistico</h3>
-          <p>
-            Per bisogni particolari (fisioterapia, logopedia, psicoterapia, psicomotricità)
-            ci si avvale della consulenza di Centri Specialistici del territorio.
-          </p>
-        </div>
-
-        <div class="service-card reveal delay-3">
-          <span class="service-icon" aria-hidden="true">👨‍👩‍👧</span>
-          <h3>Relazioni familiari</h3>
-          <p>
-            Possibilità di visite con i genitori in ambito protetto all'interno della Comunità,
-            con supporto educativo e mediazione della relazione genitore-figlio.
-          </p>
-        </div>
-
-        <div class="service-card reveal delay-3">
-          <span class="service-icon" aria-hidden="true">🤝</span>
-          <h3>Accompagnamento</h3>
-          <p>
-            Percorsi di accompagnamento all'affido familiare e all'adozione, educazione
-            all'autonomia personale e sociale, sostegno nei momenti di transizione.
-          </p>
-        </div>
-
+      <div class="service-card reveal delay-1">
+        <span class="service-icon" aria-hidden="true">🌍</span>
+        <h3>Integrazione sul territorio</h3>
+        <p>
+          Promuoviamo percorsi di inclusione attraverso la collaborazione con scuole, mediatori culturali,
+          gruppi sportivi, oratori e altre realtà del territorio, favorendo la partecipazione, la
+          socializzazione e la crescita personale.
+        </p>
       </div>
+
+      <div class="service-card reveal delay-2">
+        <span class="service-icon" aria-hidden="true">🧭</span>
+        <h3>Orientamento ai servizi specialistici</h3>
+        <p>
+          Accompagniamo le persone e le famiglie nell'accesso ai servizi specialistici del territorio,
+          facilitando il contatto con professionisti quali logopedisti, psicoterapeuti, psicomotricisti,
+          fisioterapisti e altri specialisti, in base alle esigenze specifiche.
+        </p>
+      </div>
+
+      <div class="service-card reveal delay-3">
+        <span class="service-icon" aria-hidden="true">👨‍👩‍👧</span>
+        <h3>Incontri protetti</h3>
+        <p>
+          Organizziamo incontri protetti tra genitori e figli in un ambiente sicuro e accogliente,
+          garantendo il supporto educativo necessario e collaborando con i servizi competenti per
+          tutelare il benessere del minore.
+        </p>
+      </div>
+
+      <div class="service-card reveal delay-3">
+        <span class="service-icon" aria-hidden="true">🤝</span>
+        <h3>Affido familiare e adozione</h3>
+        <p>
+          Offriamo sostegno e accompagnamento nei percorsi di affido familiare e adozione, affiancando
+          le famiglie e collaborando con i servizi territoriali nelle diverse fasi del percorso.
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ================================================================
        ▸ MISSIONE EDUCATIVA
   ================================================================ -->
-  <section id="missione" class="bg-white">
-    <div class="container two-col">
+<section id="missione" class="bg-white">
+  <div class="container two-col">
 
-      <div class="reveal">
-        <span class="eyebrow">Missione</span>
-        <h2 class="section-title">La nostra missione educativa</h2>
-        <div class="section-line"></div>
-
-        <p class="section-text">
-          La persona umana, che ha subito condizionamenti psicologici e sociali tali da
-          impedirne il pieno sviluppo, è il centro della nostra azione.
-        </p>
-        <p class="section-text">
-          La Cooperativa Sociale Il Sole utilizza strumenti educativi e riabilitativi che
-          promuovono la crescita e il benessere della persona attraverso uno stile
-          <strong>partecipativo, propositivo ed autorevole</strong>.
-        </p>
-
-        <!-- Citazione stilizzata -->
-        <blockquote class="quote-block">
-          <p>
-            "Il Sole vuole valorizzare ogni individuo e rispondere ai suoi bisogni fondamentali
-            che si esprimono nel rispetto, stima ed amore, prima ancora della cura, dell'aiuto
-            e dell'assistenza."
-          </p>
-        </blockquote>
-      </div>
-
-      <div class="card reveal delay-2">
-        <h3>Il nostro metodo</h3>
-        <p>
-          Con questo metodo si vuole evitare un permissivismo e un assistenzialismo generatori
-          di indifferenza, e allo stesso tempo una proiettività che non promuove la persona.
-        </p>
-        <p>
-          La nostra opera pedagogica e assistenziale si struttura come risposta ai bisogni della
-          persona, attraverso una soluzione significativa, empirica e professionale, offrendo
-          intensi stimoli e mezzi educativi carichi di forza promuovente.
-        </p>
-        <p>
-          Gli interventi sono sempre proporzionati alle capacità ricettive di ciascun Ospite,
-          nel pieno rispetto dei suoi tempi e delle sue risorse.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================
-       ▸ SEZIONE 5x1000
-       Sezione a sfondo scuro per dare enfasi visiva e spingere all'azione.
-  ================================================================ -->
-    <section id="cinque">
-    <div class="container reveal">
-
-      <span class="eyebrow">Progetti</span>
-      <h2 class="section-title">Sostienici –<br>5x1000</h2>
+    <div class="reveal">
+      <span class="eyebrow">Missione</span>
+      <h2 class="section-title">La nostra missione educativa</h2>
       <div class="section-line"></div>
 
       <p class="section-text">
-  Destinare il tuo <strong>5x1000</strong> alla Cooperativa Sociale Il Sole significa sostenere
-  ogni giorno i minori accolti in Comunità, offrendo loro protezione, ascolto e reali
-  opportunità di crescita.
-</p>
+        La persona è il centro del nostro impegno educativo. Crediamo che ogni minore, indipendentemente dalla propria storia e dalle difficoltà vissute, possieda risorse e potenzialità che meritano di essere riconosciute, valorizzate e accompagnate con competenza e responsabilità.
+      </p>
 
-<div class="cinque-box">
-  <h3>Perché il 5x1000 è importante</h3>
-  <p>
-    Con il tuo contributo possiamo potenziare i servizi educativi, attivare nuovi laboratori,
-    rafforzare il supporto alle famiglie e garantire percorsi personalizzati per ogni ragazzo.
-  </p>
-  <p>
-    Firma nel riquadro <b>"Sostegno degli enti del Terzo Settore iscritti nel RUNTS"</b> e inserisci il nostro codice fiscale.
-  </p>
-  <a class="btn-primary" style="margin-top:1.4rem;">
-    C.F. 06804681218
-  </a>
+      <p class="section-text">
+        Il nostro intervento educativo promuove la crescita personale e il benessere attraverso uno stile fondato sulla partecipazione, sul dialogo e su un'autorevolezza capace di guidare senza sostituirsi alla persona. Crediamo in un'educazione che responsabilizza, favorisce l'autonomia e sostiene ogni ragazzo nella scoperta delle proprie capacità.
+      </p>
+
+      <p class="section-text">
+        Rifiutiamo ogni forma di assistenzialismo che limiti la crescita della persona. Il nostro obiettivo è offrire strumenti educativi efficaci, costruendo percorsi che rispettino i tempi, i bisogni e le potenzialità di ciascun minore.
+      </p>
+
+      <!-- Citazione stilizzata -->
+      <blockquote class="quote-block">
+        <p>
+          "Ogni relazione educativa nasce dall'ascolto, dal rispetto, dalla stima e dalla fiducia, valori che guidano quotidianamente il nostro operato e orientano ogni progetto verso il benessere e la piena realizzazione della persona."
+        </p>
+      </blockquote>
+    </div>
+
+    <div class="card reveal delay-2">
+      <h3>Il nostro metodo</h3>
+      <p>
+        Con questo metodo si vuole evitare un permissivismo e un assistenzialismo generatori
+        di indifferenza, e allo stesso tempo una proiettività che non promuove la persona.
+      </p>
+      <p>
+        La nostra opera pedagogica e assistenziale si struttura come risposta ai bisogni della
+        persona, attraverso una soluzione significativa, empirica e professionale, offrendo
+        intensi stimoli e mezzi educativi carichi di forza promuovente.
+      </p>
+      <p>
+        Gli interventi sono sempre proporzionati alle capacità ricettive di ciascun Ospite,
+        nel pieno rispetto dei suoi tempi e delle sue risorse.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- ================================================================
+       ▸ SOSTIENICI
+  ================================================================ -->
+<section id="sostienici" class="bg-white">
+  <div class="container reveal">
+
+    <span class="eyebrow">Sostienici</span>
+    <h2 class="section-title">Sostieni la nostra<br>missione educativa</h2>
+    <div class="section-line"></div>
+
+    <p class="section-text">
+      Ogni ragazzo ha bisogno non solo di un luogo sicuro in cui vivere, ma anche di esperienze che lo aiutino a crescere, a scoprire il mondo e a costruire ricordi positivi.
+    </p>
+
+    <p class="section-text">
+      Le attività quotidiane e l'accoglienza nelle nostre comunità sono garantite dall'impegno della Cooperativa Sociale IL SOLE e dai servizi previsti. Il tuo sostegno ci permette di andare oltre, offrendo ai minori opportunità che arricchiscono il loro percorso educativo e personale.
+    </p>
+
+    <p class="section-text">
+      Grazie al contributo di chi sceglie di essere al nostro fianco possiamo rendere possibili esperienze come gite, soggiorni educativi, vacanze e attività culturali, offrendo ai nostri ragazzi occasioni che vanno oltre la quotidianità e contribuiscono alla loro crescita personale.
+    </p>
+
+    <p class="section-text">
+      Il tuo contributo non sostiene la quotidianità delle nostre comunità, ma rende possibile quel valore aggiunto che trasforma un percorso educativo in un'esperienza ricca di opportunità, emozioni e nuovi orizzonti. Perché crescere significa anche poter vivere esperienze che lasciano un segno e aiutano a costruire il proprio futuro.
+    </p>
+
+    
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+       ▸ SEZIONE 5x1000
+  ================================================================ -->
+<section id="cinque" class="bg-white">
+  <div class="container reveal">
+
+    <span class="eyebrow">Progetti</span>
+    <h2 class="section-title">Sostienici –<br>5x1000</h2>
+    <div class="section-line"></div>
+
+    <p class="section-text">
+      Destinare il tuo <strong>5x1000</strong> alla Cooperativa Sociale Il Sole significa sostenere
+      ogni giorno i minori accolti in Comunità, offrendo loro protezione, ascolto e reali
+      opportunità di crescita.
+    </p>
+
+    <div class="cinque-box">
+      <h3>Perché il 5x1000 è importante</h3>
+      <p>
+        Con il tuo contributo possiamo potenziare i servizi educativi, attivare nuovi laboratori,
+        rafforzare il supporto alle famiglie e garantire percorsi personalizzati per ogni ragazzo.
+      </p>
+      <p>
+        Firma nel riquadro <b>"Sostegno degli enti del Terzo Settore iscritti nel RUNTS"</b> e inserisci il nostro codice fiscale.
+      </p>
+
+      <!-- Bottone corretto -->
+      <button class="btn-primary" style="margin-top:1.4rem;" onclick="openModal('cinqueModal')">
+        Dona il tuo 5×1000
+      </button>
+      <a href="https://forms.gle/88mjKmyKstGh2aqX9" target="_blank" class="btn-primary" style="margin-top:.6rem;">
+        Se hai destinato il tuo 5x1000 a noi
+      </a>
+      
+    </div>
+
+
+  </div>
+</section>
+
+<!-- ================================================================
+       ▸ DONAZIONI
+  ================================================================ -->
+<section id="donazioni" class="bg-cream">
+  <div class="container reveal">
+
+    <span class="eyebrow">Donazioni</span>
+    <h2 class="section-title">Sostieni la Comunità<br>Alloggio "Il Sole"</h2>
+    <div class="section-line"></div>
+
+    <p class="section-text">
+      Le donazioni ci permettono di mantenere e sviluppare i servizi educativi, i percorsi
+      di inclusione e i progetti dedicati ai minori accolti. Anche un piccolo contributo
+      può fare la differenza nella vita di una persona.
+    </p>
+
+    <div class="donation-box">
+      <h3>🌟 Dona ora in modo sicuro</h3>
+      <p>
+        Puoi sostenere i nostri progetti tramite bonifico bancario.
+        Ogni donazione è destinata direttamente ai servizi educativi e di accoglienza.
+      </p>
+      <button class="btn-primary" onclick="openModal('donazioneModal')" style="margin-top:1.4rem;">
+        Dona ora
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+       ▸ MODAL DONAZIONE
+================================================================ -->
+<div id="donazioneModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+
+    <h3>💛 Dona ora</h3>
+
+    <div class="modal-content">
+
+      <div class="copy-row">
+        <p><strong>Intestatario</strong><br>IL SOLE Società cooperativa sociale onlus</p>
+        <button class="copy-btn" data-copy="IL SOLE Società cooperativa sociale onlus">Copia</button>
+      </div>
+
+      <div class="copy-row">
+        <p><strong>IBAN</strong><br>ITXX X0000 00000 000000000000</p>
+        <button class="copy-btn" data-copy="ITXX X0000 00000 000000000000">Copia</button>
+      </div>
+
+      <div class="copy-row">
+        <p><strong>Causale</strong><br>Donazione Liberale</p>
+        <button class="copy-btn" data-copy="Donazione Liberale">Copia</button>
+      </div>
+
+    </div>
+
+    <p style="margin-top:1rem;">
+      <strong>Agevolazioni fiscali</strong><br>
+      Le donazioni a favore della Cooperativa Sociale IL SOLE, iscritta al RUNTS, possono beneficiare
+      delle agevolazioni fiscali previste dalla normativa vigente. Per usufruirne è necessario effettuare
+      il pagamento con strumenti tracciabili e conservare la ricevuta della donazione.
+    </p>
+
+
+  </div>
 </div>
 
 
-    </div>
-  </section>
-
-  <!-- ================================================================
-       ▸ DONAZIONI
+<!-- ================================================================
+       ▸ MODAL 5×1000
   ================================================================ -->
-  <section id="donazioni" class="bg-cream">
-    <div class="container reveal">
+<div id="cinqueModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box">
+    <h3>🧡 Dona il tuo 5×1000</h3>
 
-      <span class="eyebrow">Donazioni</span>
-      <h2 class="section-title">Sostieni la Comunità<br>Alloggio "Il Sole"</h2>
-      <div class="section-line"></div>
-
-      <p class="section-text">
-        Le donazioni ci permettono di mantenere e sviluppare i servizi educativi, i percorsi
-        di inclusione e i progetti dedicati ai minori accolti. Anche un piccolo contributo
-        può fare la differenza nella vita di una persona.
+    <div class="modal-content">
+      <p>
+        Firma nel riquadro <strong>“Sostegno degli enti del Terzo Settore iscritti nel RUNTS”</strong>.
+      </p>
+      <p>
+        Inserisci il codice fiscale della Cooperativa Sociale IL SOLE:
       </p>
 
-      <div class="donation-box">
-        <h3>🌟 Dona ora in modo sicuro</h3>
-        <p>
-          Puoi sostenere i nostri progetti tramite il sito ufficiale.
-          Ogni donazione è destinata direttamente ai servizi educativi e di accoglienza.
-        </p>
-        <a target="_blank" rel="noopener noreferrer"
-           class="btn-primary" style="margin-top:1.4rem;">
-          IBAN: 
-        </a>
-      </div>
+      <p style="font-size:1.4rem; font-weight:700; color:var(--navy);">
+        06804681218
+      </p>
 
+      <p>
+        Il tuo gesto permette di sostenere progetti educativi, attività culturali, laboratori e percorsi di crescita per i minori accolti.
+      </p>
     </div>
-  </section>
+
+    
+
+  </div>
+</div>
+
+
+<!-- ================================================================
+       ▸ MODAL CSS + JS
+  ================================================================ -->
+<style>
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 9999;
+  }
+  .modal-box {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    max-width: 480px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    animation: fadeIn .3s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity:0; transform:scale(.95);}
+    to {opacity:1; transform:scale(1);}
+  }
+</style>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+  function closeModal(e) {
+    if (!e || e.target.classList.contains("modal-overlay")) {
+      document.querySelectorAll(".modal-overlay").forEach(m => m.style.display = "none");
+    }
+  }
+</script>
 
   <!-- ================================================================
        ▸ CONTATTI E DATI UFFICIALI
-  ================================================================ -->
-  <section id="contatti" class="bg-white">
-    <div class="container reveal">
+================================================================ -->
+<section id="contatti" class="bg-white">
+  <div class="container reveal">
 
-      <span class="eyebrow">Contatti</span>
-      <h2 class="section-title">Contatti e<br>informazioni ufficiali</h2>
-      <div class="section-line"></div>
+    <span class="eyebrow">Contatti</span>
+    <h2 class="section-title">Contatti e<br>informazioni ufficiali</h2>
+    <div class="section-line"></div>
 
-      <p class="section-text">
-        Per informazioni sulla Comunità Alloggio "Il Sole", sui servizi offerti o sulle modalità
-        di inserimento e collaborazione, puoi contattarci ai seguenti recapiti.
+    <p class="section-text">
+      Per informazioni sulla Cooperativa Sociale "Il Sole", sui servizi offerti o sulle modalità
+      di inserimento e collaborazione, puoi contattarci ai seguenti recapiti ufficiali.
+    </p>
+
+    <!-- Griglia due colonne -->
+    <div class="contact-grid">
+
+      <!-- Card recapiti fisici -->
+      <div class="card reveal delay-1">
+        <h3>📍 Recapiti</h3>
+
+        <div class="contact-item">
+          <div class="contact-label">Indirizzo</div>
+          <div class="contact-value">
+            Vico delle Nocelle, 46<br>Napoli
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">Cellulari</div>
+          <div class="contact-value">
+            <a href="tel:+393394466993" class="contact-link">339 4466993</a><br>
+            <a href="tel:+393397932585" class="contact-link">339 7932585</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">Telefono fisso</div>
+          <div class="contact-value">
+            <a href="tel:+3908119717552" class="contact-link">081 19717552</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card email + autorizzazioni -->
+      <div class="card reveal delay-2">
+        <h3>✉️ Email e autorizzazioni</h3>
+
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:coopsoc.ilsole@libero.it" class="contact-link">
+              coopsoc.ilsole@libero.it
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">PEC</div>
+          <div class="contact-value">
+            <a href="mailto:ilsole.coop@pec.it" class="contact-link">
+              ilsole.coop@pec.it
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">Comunità Alloggio</div>
+          <div class="contact-value" style="font-weight:600;color:var(--navy);">
+            "L'Armonia del Sole"
+          </div>
+
+          <span class="auth-badge">Autorizzazione N. 67 – 9 agosto 2017</span>
+          <span class="auth-badge">Accreditamento N. 74 – 13 settembre 2017</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================================================================
+         ▸ LAVORA CON NOI
+    ================================================================ -->
+    <div class="card reveal delay-3" style="margin-top:2.4rem;">
+      <h3>🧑‍💼 Lavora con noi</h3>
+
+      <p style="color:var(--cream); line-height:1.8; margin-bottom:1.2rem;">
+        La Cooperativa Sociale <strong>IL SOLE</strong> è sempre lieta di conoscere persone motivate
+        che condividano i suoi valori. Se desideri entrare a far parte della nostra realtà,
+        inviaci la tua candidatura spontanea compilando il modulo sottostante e allegando il tuo curriculum vitae.
       </p>
 
-      <!-- Griglia due colonne: recapiti + email/autorizzazioni -->
-      <div class="contact-grid">
-
-        <!-- Card recapiti fisici -->
-        <div class="card reveal delay-1">
-          <h3>📍 Recapiti</h3>
-
-          <div class="contact-item">
-            <div class="contact-label">Indirizzo</div>
-            <div class="contact-value">Vico delle Nocelle, 46<br>80136 Napoli (NA)</div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-label">Telefono fisso</div>
-            <div class="contact-value">
-              <a href="tel:+390811971755" class="contact-link">081 19717552</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-label">Cellulari</div>
-            <div class="contact-value">
-              <a href="tel:+393397932585" class="contact-link">339 7932585</a><br>
-              <a href="tel:+393394466993" class="contact-link">339 4466993</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card email + autorizzazioni -->
-        <div class="card reveal delay-2">
-          <h3>✉️ Email e autorizzazioni</h3>
-
-          <div class="contact-item">
-            <div class="contact-label">Email</div>
-            <div class="contact-value">
-              <a href="mailto:coopsoc.ilsole@libero.it" class="contact-link">
-                coopsoc.ilsole@libero.it
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-label">PEC</div>
-            <div class="contact-value">
-              <a href="mailto:ilsole.coop@pec.it" class="contact-link">
-                ilsole.coop@pec.it
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-label">Comunità Alloggio</div>
-            <div class="contact-value" style="font-weight:600;color:var(--navy);">
-              "L'Armonia del Sole"
-            </div>
-            <!-- Badge autorizzazioni istituzionali -->
-            <span class="auth-badge">Autorizzazione N. 67 – 9 agosto 2017</span>
-            <span class="auth-badge">Accreditamento N. 74 – 13 settembre 2017</span>
-          </div>
-        </div>
-
-      </div>
+      <!-- Google Form -->
+      <a href="https://forms.gle/nMQF9veBc8DVYrDs9" target="_blank" class="btn-primary" style="margin-top:.6rem;">
+        Compila il modulo di candidatura
+      </a>
     </div>
-  </section>
+
+  </div>
+</section>
+
+
 
   <!-- ================================================================
        ▸ FOOTER
@@ -1516,39 +1914,6 @@
     }, { passive: true }); // passive: true → migliora le performance dello scroll
 
     /* ----------------------------------------------------------------
-       3. MENU MOBILE – HAMBURGER TOGGLE
-       Al click del bottone hamburger:
-         a) Aggiunge/rimuove classe .open sul button (animazione ×)
-         b) Aggiunge/rimuove classe .open sul menu overlay
-         c) Aggiorna aria-expanded per accessibilità
-         d) Blocca/sblocca lo scroll del body
-    ---------------------------------------------------------------- */
-    const hamburger   = document.getElementById('hamburger');
-    const mobileMenu  = document.getElementById('mobileMenu');
-
-    function toggleMenu(force) {
-      const isOpen = force !== undefined ? force : !hamburger.classList.contains('open');
-      hamburger.classList.toggle('open', isOpen);
-      mobileMenu.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-      // Blocca lo scroll della pagina quando il menu è aperto
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    }
-
-    hamburger.addEventListener('click', () => toggleMenu());
-
-    /* ----------------------------------------------------------------
-       4. CHIUSURA MENU AL CLICK SUI LINK MOBILI
-       Quando l'utente seleziona una voce del menu mobile,
-       chiude il menu e scorre alla sezione corrispondente.
-    ---------------------------------------------------------------- */
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        toggleMenu(false); // chiudi menu
-      });
-    });
-
-    /* ----------------------------------------------------------------
        5. CHIUSURA MENU CON TASTO ESC
        Accessibilità: permette di chiudere il menu con la tastiera.
     ---------------------------------------------------------------- */
@@ -1584,6 +1949,31 @@
     });
 
     revealEls.forEach(el => revealObserver.observe(el));
+
+
+    
+
+
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = btn.getAttribute("data-copy");
+
+    navigator.clipboard.writeText(text).then(() => {
+      btn.innerText = "Copiato ✓";
+      btn.style.background = "var(--amber)";
+      setTimeout(() => {
+        btn.innerText = "Copia";
+        btn.style.background = "var(--navy)";
+      }, 1200);
+    }).catch(err => {
+      console.error("Errore copia:", err);
+    });
+  });
+});
+
+
+
+
 
   </script>
 
