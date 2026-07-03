@@ -979,9 +979,9 @@
 
   .nav-links {
     justify-content: center;
-    gap: .7rem 1.2rem;
-    font-size: .8rem;
-    max-width: 360px;
+    gap: .7rem 1rem;
+    font-size: .5rem;
+    max-width: 600px;
     margin: 0 auto;
   }
 
@@ -1219,6 +1219,61 @@
   }
 }
 
+/* ================================================================
+   ▸ LAVORA CON NOI
+   Stile coerente con Servizi, Missione, Donazioni
+================================================================ */
+
+#lavora {
+  background: var(--cream);
+  padding: 3rem 0;
+}
+
+/* Titolo sezione */
+#lavora .section-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+/* Sottotitolo */
+#lavora .section-subtitle {
+  color: var(--grey);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 720px;
+  margin-bottom: 1.4rem;
+}
+
+/* Testo descrittivo */
+#lavora .section-text {
+  color: var(--deep-blue);
+  font-size: .97rem;
+  line-height: 1.75;
+  max-width: 720px;
+}
+
+/* Bottone Google Form */
+#lavora .btn-primary {
+  background: var(--sun);
+  color: var(--navy);
+  padding: .9rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--ease);
+}
+
+#lavora .btn-primary:hover {
+  background: var(--amber);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
 
   </style>
 </head>
@@ -1252,6 +1307,7 @@
           <li><a href="#missione">Missione</a></li>
           <li><a href="#cinque">Sostienici</a></li>
           <li><a href="#contatti">Contatti</a></li>
+          <li><a href="#lavora">Lavora con Noi</a></li>
         </ul>
       </nav>
 
@@ -1276,6 +1332,7 @@
     <a href="#missione"      class="mobile-link">Missione</a>
     <a href="#cinque" class="mobile-link">Sostienici</a>
     <a href="#contatti"      class="mobile-link">Contatti</a>
+    <a href="#lavora"      class="mobile-link">Lavora con Noi</a>
   </div>
 
   <!-- ================================================================
@@ -1340,20 +1397,33 @@
       <div class="section-line"></div>
 
       <p class="section-text">
-        La <strong>Cooperativa Sociale Il Sole</strong>, fondata nel gennaio 2010, opera con l'obiettivo di offrire accoglienza, tutela e percorsi educativi rivolti a minori che vivono situazioni di fragilità personale, familiare o sociale.
+        La Cooperativa Sociale IL SOLE, fondata nel gennaio 2010, opera con l'obiettivo di offrire accoglienza, tutela e percorsi educativi rivolti a minori che vivono situazioni di fragilità personale, familiare o sociale.
       </p>
 
       <p class="section-text">
-        Da oltre quindici anni rappresentiamo un punto di riferimento nel settore socio‑educativo, promuovendo interventi fondati sul rispetto della persona, sulla professionalità e sulla costruzione di relazioni significative.
+        Da oltre quindici anni rappresentiamo un punto di riferimento nel settore socio-educativo, promuovendo interventi fondati sul rispetto della persona, sulla professionalità e sulla costruzione di relazioni significative.
       </p>
 
       <p class="section-text">
-        Gestiamo due comunità alloggio per minori, <strong>"L'Armonia del Sole"</strong> e <strong>"I Ragazzi del Sole"</strong>, ambienti protetti e accoglienti nei quali gli adolescenti possono trovare sicurezza, ascolto e opportunità di crescita. Ogni percorso è personalizzato e realizzato da un'équipe qualificata che opera in stretta collaborazione con i servizi sociali, le istituzioni e le famiglie, quando possibile.
+        Gestiamo due comunità alloggio per minori, "L'ARMONIA DEL SOLE" e "I RAGAZZI DEL SOLE" entrambe situate nel centro di Napoli.
+      </p>
+
+      <p class="section-text">
+        Le nostre strutture costituiscono ambienti protetti e accoglienti nei quali i minori possono trovare sicurezza, ascolto e opportunità di crescita.
+      </p>
+
+      <p class="section-text">
+        Accogliamo adolescenti provenienti da tutto il territorio nazionale, offrendo loro un contesto educativo stabile e qualificato.
+      </p>
+
+      <p class="section-text">
+        Ogni percorso è personalizzato e realizzato da un'équipe qualificata che opera in stretta collaborazione con i servizi sociali, le istituzioni e le famiglie, quando possibile.
       </p>
 
       <p class="section-text">
         Il nostro lavoro è orientato a favorire il benessere psicofisico, la crescita personale, l'inclusione sociale e il raggiungimento dell'autonomia, valorizzando le capacità e le risorse di ogni ragazzo.
       </p>
+
     </div>
 
     <!-- Card visione -->
@@ -1554,8 +1624,6 @@
     <p class="section-text">
       Il tuo contributo non sostiene la quotidianità delle nostre comunità, ma rende possibile quel valore aggiunto che trasforma un percorso educativo in un'esperienza ricca di opportunità, emozioni e nuovi orizzonti. Perché crescere significa anche poter vivere esperienze che lasciano un segno e aiutano a costruire il proprio futuro.
     </p>
-
-    
 
   </div>
 </section>
@@ -1822,7 +1890,8 @@
 
     </div>
 
-    <!-- ================================================================
+
+      <!-- ================================================================
          ▸ LAVORA CON NOI
     ================================================================ -->
     <div class="card reveal delay-3" style="margin-top:2.4rem;">
@@ -1834,11 +1903,32 @@
         inviaci la tua candidatura spontanea compilando il modulo sottostante e allegando il tuo curriculum vitae.
       </p>
 
-      <!-- Google Form -->
-      <a href="https://forms.gle/nMQF9veBc8DVYrDs9" target="_blank" class="btn-primary" style="margin-top:.6rem;">
-        Compila il modulo di candidatura
-      </a>
-    </div>
+      <section id="lavora" class="bg-cream" style="padding:3rem 0;">
+  <div class="container">
+    
+    <h2 class="section-title">Lavora con noi</h2>
+    <p class="section-subtitle">
+      La Cooperativa Sociale IL SOLE accoglie persone motivate, responsabili e desiderose di contribuire 
+      alla crescita del territorio. Crediamo nel valore umano, nella formazione continua e nella collaborazione 
+      come strumenti fondamentali per offrire servizi di qualità alle famiglie e alla comunità.
+    </p>
+
+    <p class="section-text">
+      Se vuoi proporre la tua candidatura, puoi inviare una <strong>domanda spontanea</strong> tramite il nostro 
+      modulo ufficiale. Ti chiediamo di compilare tutti i campi richiesti e allegare il tuo Curriculum Vitae 
+      in formato PDF. Ogni candidatura viene valutata con attenzione dal nostro team.
+    </p>
+
+    <!-- Google Form -->
+    <a href="https://forms.gle/nMQF9veBc8DVYrDs9" 
+       target="_blank" 
+       class="btn-primary" 
+       style="margin-top:1.2rem; display:inline-block;">
+      Compila il modulo di candidatura
+    </a>
+
+  </div>
+</section>
 
   </div>
 </section>
