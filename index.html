@@ -309,66 +309,6 @@
     .nav-links a:hover { color: var(--amber); }
     .nav-links a:hover::after { width: 100%; }
 
-    /* ---- Hamburger button (visibile solo su mobile) ---- */
-    .hamburger {
-      display: none;          /* nascosto su desktop */
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 6px;
-      z-index: 200;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--navy);
-      border-radius: 2px;
-      transition: var(--ease);
-    }
-
-    /* Quando il menu è aperto (classe .open sul button) */
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ---- Overlay menu mobile ---- */
-    .mobile-menu {
-      display: none; /* nascosto su desktop */
-      position: fixed;
-      inset: 0;
-      background: var(--navy);
-      z-index: 150;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity .4s ease, transform .4s ease;
-      pointer-events: none;
-    }
-
-    .mobile-menu.open {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-
-    .mobile-menu a {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: .02em;
-      transition: color .3s;
-    }
-
-    .mobile-menu a:hover { color: var(--sun); }
 
     /* ================================================================
        ▸ HERO
@@ -574,7 +514,7 @@
     /* ================================================================
        ▸ CHI SIAMO
     ================================================================ */
-    #chi-siamo { background: var(--cream); }
+    #chi-siamo { background: var(--gold-pale); }
 
     /* Card bianca generica riutilizzabile */
     .card {
@@ -928,10 +868,10 @@
       }
     }
 
-    /* ================================================================
-       ▸ RESPONSIVE – TABLET (≤ 920px)
-    ================================================================ */
-   @media (max-width: 920px) {
+ /* ================================================================
+   ▸ RESPONSIVE – TABLET (≤ 920px)
+================================================================ */
+@media (max-width: 920px) {
 
   .nav {
     flex-wrap: wrap;
@@ -954,7 +894,6 @@
     font-size: .9rem;
   }
 
-
   .hero-inner,
   .two-col,
   .contact-grid {
@@ -963,11 +902,49 @@
   }
 
 }
-    /* ================================================================
-       ▸ RESPONSIVE – MOBILE (≤ 600px)
-    ================================================================ */
-    @media (max-width: 600px) {
 
+/* NASCONDE IL MENU MOBILE SU DESKTOP */
+.mobile-menu {
+  display: none !important;
+}
+
+/* ================================================================
+   ▸ RESPONSIVE – MOBILE (≤ 600px)
+================================================================ */
+/* ================================================================
+   ▸ RESPONSIVE – MOBILE (≤ 600px)
+================================================================ */
+@media (max-width: 600px) {
+
+
+  /* MENU MOBILE IN BASSO */
+  .mobile-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--navy);
+    padding: 10px 5px;
+    display: flex!important;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    z-index: 9999;
+  }
+
+  .mobile-menu .mobile-link {
+    font-size: 0.7rem;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* NASCONDE IL MENU DESKTOP */
+  .nav-links {
+    display: none !important;
+  }
+
+  /* NAV MOBILE */
   .nav {
     flex-direction: column;
     align-items: center;
@@ -975,14 +952,6 @@
 
   nav {
     width: 100%;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: .7rem 1rem;
-    font-size: .5rem;
-    max-width: 600px;
-    margin: 0 auto;
   }
 
   .logo-img {
@@ -993,7 +962,9 @@
     font-size: 3rem;
   }
 
-} /* ← QUESTA MANCAVA */
+}
+
+
 
 
 /* ================================================================
@@ -1302,23 +1273,15 @@
       <nav aria-label="Navigazione principale">
         <ul class="nav-links">
           <li><a href="#chi-siamo">Chi siamo</a></li>
-          <li><a href="#accesso">Accesso</a></li>
-          <li><a href="#servizi">Servizi</a></li>
           <li><a href="#missione">Missione</a></li>
+          <li><a href="#servizi">Servizi</a></li>
           <li><a href="#cinque">Sostienici</a></li>
-          <li><a href="#contatti">Contatti</a></li>
           <li><a href="#lavora">Lavora con Noi</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+          
         </ul>
       </nav>
 
-      <!-- ---- Hamburger (solo mobile) ---- -->
-      <!-- aria-expanded comunicato agli screen reader -->
-      <button class="hamburger" id="hamburger"
-              aria-label="Apri menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </header>
 
@@ -1327,12 +1290,12 @@
   ================================================================ -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
     <a href="#chi-siamo"     class="mobile-link">Chi siamo</a>
-    <a href="#accesso"       class="mobile-link">Accesso</a>
-    <a href="#servizi"       class="mobile-link">Servizi</a>
     <a href="#missione"      class="mobile-link">Missione</a>
+    <a href="#servizi"       class="mobile-link">Servizi</a>
     <a href="#cinque" class="mobile-link">Sostienici</a>
-    <a href="#contatti"      class="mobile-link">Contatti</a>
     <a href="#lavora"      class="mobile-link">Lavora con Noi</a>
+    <a href="#contatti"      class="mobile-link">Contatti</a>
+    
   </div>
 
   <!-- ================================================================
@@ -1359,27 +1322,9 @@
 
         <div class="hero-actions">
           <a href="#cinque"     class="btn-primary">Sostienici</a>
-          <a href="#cinque" class="btn-outline">5x1000</a>
         </div>
       </div>
 
-      <!-- Colonna card decorativa -->
-      <aside class="hero-card reveal delay-2">
-        <h3>Cooperativa Sociale Il Sole</h3>
-        <p>
-          Nata nel <strong>gennaio 2010</strong> con lo scopo di offrire servizi sociali,
-          sanitari ed educativi orientati ai bisogni di persone in condizioni di
-          marginalità, svantaggio sociale, devianza e rischio di emarginazione.
-        </p>
-        <p>
-          Promuoviamo la crescita, il benessere e l'integrazione sociale attraverso
-          percorsi educativi strutturati e un ambiente accogliente e protetto.
-        </p>
-        <div class="founding-badge">
-          <span class="dot"></span>
-          Attivi dal 2010
-        </div>
-      </aside>
 
     </div>
   </section>
@@ -1387,7 +1332,10 @@
   <!-- ================================================================
        ▸ CHI SIAMO
   ================================================================ -->
-<section id="chi-siamo" class="bg-cream">
+<aside class="hero-card reveal delay-2">
+        
+        
+  <section id="chi-siamo" class="bg-cream">
   <div class="container two-col">
 
     <!-- Testo principale -->
@@ -1426,67 +1374,57 @@
 
     </div>
 
-    <!-- Card visione -->
-    <div class="card reveal delay-2">
-      <h3>La nostra visione</h3>
-      <p>
-        Crediamo che ogni persona, anche quando ha vissuto esperienze difficili o
-        contesti familiari complessi, possa intraprendere un percorso autentico di
-        crescita, autonomia e recupero.
-      </p>
-      <p>
-        Per questo costruiamo progetti educativi individualizzati, in collaborazione
-        con i servizi invianti e con la rete territoriale, per offrire opportunità
-        concrete di cambiamento.
-      </p>
-    </div>
 
   </div>
 </section>
+    </aside>
 
-
-  <!-- ================================================================
-       ▸ ACCESSO ALLA COMUNITÀ
+ <!-- ================================================================
+       ▸ MISSIONE EDUCATIVA
   ================================================================ -->
-  <section id="accesso" class="bg-white">
-    <div class="container reveal">
+<section id="missione" class="bg-white">
+  <div class="container two-col">
 
-      <span class="eyebrow">Accesso</span>
-      <h2 class="section-title">Chi può accedere<br>alla Comunità Alloggio</h2>
+    <div class="reveal">
+      <span class="eyebrow">Missione</span>
+      <h2 class="section-title">La nostra missione educativa</h2>
       <div class="section-line"></div>
 
       <p class="section-text">
-        Le Comunità Alloggio “L’Armonia del Sole” e “I Ragazzi del Sole”, accolgono minori dai <strong>13 ai 18 anni</strong>
-        che vivono situazioni di disagio socio-familiare e ambientale, allontanati dalla
-        famiglia per le suddette motivazioni.
+        La persona è il centro del nostro impegno educativo. Crediamo che ogni minore, indipendentemente dalla propria storia e dalle difficoltà vissute, possieda risorse e potenzialità che meritano di essere riconosciute, valorizzate e accompagnate con competenza e responsabilità.
       </p>
 
-      <!-- Fascia informativa scura -->
-      <div class="info-strip">
-        <div class="info-strip-icon" aria-hidden="true">📋</div>
-        <div>
-          <h4>Chi può richiedere l'inserimento</h4>
-          <ul>
-            <li>Tribunale per i Minorenni</li>
-            <li>Servizi Sociali territoriali</li>
-            <li>Istituzioni pubbliche o private del settore socio-educativo</li>
-          </ul>
-        </div>
-      </div>
+      <p class="section-text">
+        Il nostro intervento educativo promuove la crescita personale e il benessere attraverso uno stile fondato sulla partecipazione, sul dialogo e su un'autorevolezza capace di guidare senza sostituirsi alla persona. Crediamo in un'educazione che responsabilizza, favorisce l'autonomia e sostiene ogni ragazzo nella scoperta delle proprie capacità.
+      </p>
 
+      <p class="section-text">
+        Rifiutiamo ogni forma di assistenzialismo che limiti la crescita della persona. Il nostro obiettivo è offrire strumenti educativi efficaci, costruendo percorsi che rispettino i tempi, i bisogni e le potenzialità di ciascun minore.
+      </p>
+
+      <!-- Citazione stilizzata -->
+      <blockquote class="quote-block">
+        <p>
+          "Ogni relazione educativa nasce dall'ascolto, dal rispetto, dalla stima e dalla fiducia, valori che guidano quotidianamente il nostro operato e orientano ogni progetto verso il benessere e la piena realizzazione della persona."
+        </p>
+      </blockquote>
     </div>
-  </section>
 
+
+  </div>
+</section>
   <!-- ================================================================
        ▸ SERVIZI OFFERTI
 ================================================================ -->
-<section id="servizi" class="bg-cream">
+
+<section id="servizi" class="bg-yellow">
   <div class="container reveal">
 
     <span class="eyebrow">Servizi</span>
     <h2 class="section-title">I nostri servizi</h2>
     <div class="section-line"></div>
 
+    
     <p class="section-text">
       I servizi della Cooperativa Sociale <strong>IL SOLE</strong> rappresentano il nostro impegno quotidiano
       a favore dei minori, delle famiglie e della comunità. Attraverso interventi educativi, di sostegno
@@ -1547,56 +1485,7 @@
 </section>
 
 
-  <!-- ================================================================
-       ▸ MISSIONE EDUCATIVA
-  ================================================================ -->
-<section id="missione" class="bg-white">
-  <div class="container two-col">
-
-    <div class="reveal">
-      <span class="eyebrow">Missione</span>
-      <h2 class="section-title">La nostra missione educativa</h2>
-      <div class="section-line"></div>
-
-      <p class="section-text">
-        La persona è il centro del nostro impegno educativo. Crediamo che ogni minore, indipendentemente dalla propria storia e dalle difficoltà vissute, possieda risorse e potenzialità che meritano di essere riconosciute, valorizzate e accompagnate con competenza e responsabilità.
-      </p>
-
-      <p class="section-text">
-        Il nostro intervento educativo promuove la crescita personale e il benessere attraverso uno stile fondato sulla partecipazione, sul dialogo e su un'autorevolezza capace di guidare senza sostituirsi alla persona. Crediamo in un'educazione che responsabilizza, favorisce l'autonomia e sostiene ogni ragazzo nella scoperta delle proprie capacità.
-      </p>
-
-      <p class="section-text">
-        Rifiutiamo ogni forma di assistenzialismo che limiti la crescita della persona. Il nostro obiettivo è offrire strumenti educativi efficaci, costruendo percorsi che rispettino i tempi, i bisogni e le potenzialità di ciascun minore.
-      </p>
-
-      <!-- Citazione stilizzata -->
-      <blockquote class="quote-block">
-        <p>
-          "Ogni relazione educativa nasce dall'ascolto, dal rispetto, dalla stima e dalla fiducia, valori che guidano quotidianamente il nostro operato e orientano ogni progetto verso il benessere e la piena realizzazione della persona."
-        </p>
-      </blockquote>
-    </div>
-
-    <div class="card reveal delay-2">
-      <h3>Il nostro metodo</h3>
-      <p>
-        Con questo metodo si vuole evitare un permissivismo e un assistenzialismo generatori
-        di indifferenza, e allo stesso tempo una proiettività che non promuove la persona.
-      </p>
-      <p>
-        La nostra opera pedagogica e assistenziale si struttura come risposta ai bisogni della
-        persona, attraverso una soluzione significativa, empirica e professionale, offrendo
-        intensi stimoli e mezzi educativi carichi di forza promuovente.
-      </p>
-      <p>
-        Gli interventi sono sempre proporzionati alle capacità ricettive di ciascun Ospite,
-        nel pieno rispetto dei suoi tempi e delle sue risorse.
-      </p>
-    </div>
-
-  </div>
-</section>
+ 
 
 
  <!-- ================================================================
@@ -1987,15 +1876,6 @@
       }
     }, { passive: true }); // passive: true → migliora le performance dello scroll
 
-    /* ----------------------------------------------------------------
-       5. CHIUSURA MENU CON TASTO ESC
-       Accessibilità: permette di chiudere il menu con la tastiera.
-    ---------------------------------------------------------------- */
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && hamburger.classList.contains('open')) {
-        toggleMenu(false);
-      }
-    });
 
     /* ----------------------------------------------------------------
        6. SCROLL REVEAL – INTERSECTION OBSERVER
