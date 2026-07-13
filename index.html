@@ -19,7 +19,8 @@
   <meta name="description"
         content="Comunità Alloggio Il Sole, cooperativa sociale a Napoli: servizi educativi, inclusione sociale, accoglienza minori 13-18 anni, 5x1000, sostegno alle famiglie.">
   <meta name="keywords"
-        content="Comunità Alloggio Il Sole, cooperativa sociale Napoli, minori Napoli, servizi educativi, 5x1000 , inclusione sociale, terzo settore">
+      content="Comunità Alloggio Il Sole, cooperativa sociale Napoli, comunità per MSNA, collocamento minori, inserimenti minori in comunità, case famiglia Napoli, servizi educativi, inclusione sociale, terzo settore, accoglienza minori 13-18 anni">
+
 
   <!-- ================================================================
        ▸ OPEN GRAPH (anteprime su Facebook, WhatsApp, LinkedIn ecc.)
@@ -65,8 +66,6 @@
   ================================================================ -->
   <link rel="icon" type="image/png" href="https://i.ibb.co/SDVWpNw5/Progetto-senza-titolo-9-removebg-preview.png">
   <link rel="apple-touch-icon" href="https://i.ibb.co/SDVWpNw5/Progetto-senza-titolo-9-removebg-preview.png">
-
-</head>
 
 </head>
 
@@ -263,9 +262,9 @@
 
     .logo-text {
       font-family: var(--font-display);
-      font-size: 3rem;
+      font-size: 2.75rem;
       font-weight: 700;
-      color: var(--sun);
+      color: #f7ec44;
       line-height: 1.05;
       letter-spacing: .5px;
     }
@@ -273,11 +272,11 @@
     .logo-text small {
       display: block;
       font-family: var(--font-body);
-      font-size: .90rem;
+      font-size: .80rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: .15em;
-      color: var(--warm-cream);
+      color: #FFFFFF;
     }
 
     /* ---- Link di navigazione (visibili su desktop) ---- */
@@ -385,7 +384,7 @@
     /* Parola evidenziata in corsivo con colore ambra */
     .hero-title em {
       font-style: italic;
-      color: var(--amber);
+      color: var(--sun);
     }
 
     .hero-text {
@@ -405,7 +404,7 @@
 
     /* Bottone primario pieno */
     .btn-primary {
-      background: var(--amber);
+      background: var(--sun);
       color: var(--white);
       padding: .9rem 2rem;
       border-radius: 999px;   /* pillola */
@@ -419,7 +418,7 @@
     }
 
     .btn-primary:hover {
-      background: #c86a10;
+      background: #f7ec44;
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(224,122,26,.45);
     }
@@ -638,7 +637,7 @@
 
     .service-card h3 {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 1.50rem;
       font-weight: 600;
       color: var(--navy);
       margin-bottom: .6rem;
@@ -756,45 +755,56 @@
     /* ================================================================
        ▸ CONTATTI
     ================================================================ */
-    #contatti { background: var(--off-white); }
+    #contatti { 
+  background: var(--off-white); 
+}
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2.4rem;
-    }
+/* 🔥 NUOVA VERSIONE: colonna unica */
+/* Colonna unica */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+}
+/* BOX dust-blue */
+.box {
+  background: var(--dust-blue);
+  padding: 1.4rem 1.6rem;
+  border-radius: 12px;
+}
+/* Etichetta campo contatto */
+.contact-label {
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--deep-blue);
+  margin-bottom: .25rem;
+}
 
-    /* Etichetta campo contatto */
-    .contact-label {
-      font-size: .72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      color: var(--deep-blue);
-      margin-bottom: .25rem;
-    }
+.contact-value {
+  font-size: 1rem;
+  color: var(--off-white);
+  font-weight: 500;
+}
 
-    .contact-value {
-      font-size: 1rem;
-      color: var(--off-white);
-      font-weight: 500;
-    }
+.contact-item { 
+  margin-bottom: 1.2rem; 
+}
 
-    .contact-item { margin-bottom: 1.2rem; }
+/* Link email/pec colorato */
+a.contact-link {
+  color: var(--gold-pale);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color .3s;
+}
 
-    /* Link email/pec colorato */
-    a.contact-link {
-      color: var(--gold-pale);
-      font-weight: 600;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      transition: text-decoration-color .3s;
-    }
-
-    a.contact-link:hover {
-      text-decoration-color: var(--blue);
-    }
+a.contact-link:hover {
+  text-decoration-color: var(--blue);
+}
 
 
     /* ================================================================
@@ -924,7 +934,7 @@
     left: 0;
     width: 100%;
     background: var(--navy);
-    padding: 10px 5px;
+    padding: 20px 10px;
     display: flex!important;
     justify-content: space-around;
     align-items: center;
@@ -954,13 +964,40 @@
     width: 100%;
   }
 
-  .logo-img {
-    height: 110px;
-  }
+  /* ---- Logo ---- */
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-  .logo-text {
-    font-size: 3rem;
-  }
+    .logo-img {
+      height: 130px;
+      width: auto;
+      transition: var(--ease);
+    }
+
+    .logo-img:hover { transform: scale(1.04); }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 2.50rem;
+      font-weight: 700;
+      color: #f7ec44;
+      line-height: 1.05;
+      letter-spacing: .5px;
+    }
+
+    .logo-text small {
+      display: block;
+      font-family: var(--font-body);
+      font-size: .80rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: #FFFFFF;
+    }
 
 }
 
@@ -986,7 +1023,7 @@
 
 /* Primario */
 .btn-primary {
-  background: var(--amber);
+  background: var(--sun);
   color: var(--white);
 }
 
@@ -1025,7 +1062,7 @@
 
 /* Primario */
 .btn-primary {
-  background: var(--amber);
+  background: var(--sun);
   color: var(--white);
 }
 
@@ -1245,6 +1282,83 @@
   box-shadow: var(--shadow-lg);
 }
 
+.hero-actions {
+  display: flex;
+  justify-content: left;
+}
+
+.hero-spacing {
+  margin-bottom: 20px; /* distanza tra i bottoni */
+}
+
+.btn-big {
+  font-size: 1.6rem;
+  padding: 1.2rem 2.6rem;
+}
+
+.btn-small {
+  font-size: 0.85rem;     /* testo più piccolo */
+  padding: 0.4rem 0.8rem; /* meno spazio interno */
+  width: auto;            /* resta più stretto */
+  display: inline-block;  /* evita che si allarghi */
+}
+/* Disattiva la vecchia griglia */
+.contact-grid {
+  display: block !important;
+}
+
+/* Colonna unica */
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Stile voci */
+.contact-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: .4rem;
+  color: var(--navy);
+}
+
+.contact-link {
+  color: var(--navy);
+  font-weight: 600;
+}
+/* MOBILE — card minima 240px */
+.service-icon-img {
+  width: 100%;
+  max-width: 320px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TABLET — card più larga */
+@media (min-width: 768px) {
+  .service-icon-img {
+    max-width: 400px;
+    height: 150px;
+    border-radius: 12px;
+    margin-bottom: 1.1rem;
+  }
+}
+
+/* PC / DESKTOP — card molto larga */
+@media (min-width: 1024px) {
+  .service-icon-img {
+    max-width: 480px;
+    height: 180px;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+  }
+}
+
 
   </style>
 </head>
@@ -1320,10 +1434,19 @@
           Le Comunità Alloggio “L’Armonia del Sole” e “I Ragazzi del Sole”, gestite dalla Cooperativa Sociale Il Sole, accolgono minori in situazioni di disagio socio‑familiare, offrendo servizi educativi, sociali e riabilitativi orientati alla crescita, all’autonomia e all’integrazione.
         </p>
 
-        <div class="hero-actions">
-          <a href="#cinque"     class="btn-primary">Sostienici</a>
-        </div>
-      </div>
+        <div class="hero-actions hero-spacing">
+  <a href="tel:3394466993" class="btn-primary btn-big">Chiama ora</a>
+</div>
+
+<div class="hero-actions hero-spacing">
+  <a href="#sostienici" class="btn-primary">Sostienici</a>
+</div>
+
+<div class="hero-actions hero-spacing">
+  <a href="#sostienici" class="btn-primary">Dona il tuo 5x1000</a>
+</div>
+
+
 
 
     </div>
@@ -1341,7 +1464,7 @@
     <!-- Testo principale -->
     <div class="reveal">
       <span class="eyebrow">Chi siamo</span>
-      <h2 class="section-title">Presentazione della<br>Cooperativa Sociale Il Sole</h2>
+      <h2 class="section-title">Presentazione della<br>Cooperativa</h2>
       <div class="section-line"></div>
 
       <p class="section-text">
@@ -1402,12 +1525,11 @@
         Rifiutiamo ogni forma di assistenzialismo che limiti la crescita della persona. Il nostro obiettivo è offrire strumenti educativi efficaci, costruendo percorsi che rispettino i tempi, i bisogni e le potenzialità di ciascun minore.
       </p>
 
-      <!-- Citazione stilizzata -->
-      <blockquote class="quote-block">
-        <p>
-          "Ogni relazione educativa nasce dall'ascolto, dal rispetto, dalla stima e dalla fiducia, valori che guidano quotidianamente il nostro operato e orientano ogni progetto verso il benessere e la piena realizzazione della persona."
-        </p>
-      </blockquote>
+      <p class="section-text">
+       <b><em>"Ogni relazione educativa nasce dall'ascolto, dal rispetto, dalla stima e dalla fiducia, valori che guidano quotidianamente il nostro operato e orientano ogni progetto verso il benessere e la piena realizzazione della persona."</em></b>
+      </p>
+
+      
     </div>
 
 
@@ -1416,7 +1538,6 @@
   <!-- ================================================================
        ▸ SERVIZI OFFERTI
 ================================================================ -->
-
 <section id="servizi" class="bg-yellow">
   <div class="container reveal">
 
@@ -1424,7 +1545,6 @@
     <h2 class="section-title">I nostri servizi</h2>
     <div class="section-line"></div>
 
-    
     <p class="section-text">
       I servizi della Cooperativa Sociale <strong>IL SOLE</strong> rappresentano il nostro impegno quotidiano
       a favore dei minori, delle famiglie e della comunità. Attraverso interventi educativi, di sostegno
@@ -1441,8 +1561,12 @@
     <!-- Grid dei servizi -->
     <div class="services-grid">
 
+      <!-- SERVIZIO 1 -->
       <div class="service-card reveal delay-1">
-        <span class="service-icon" aria-hidden="true">🌍</span>
+        <img src="https://www.casadellostudente.net/wp-content/uploads/2017/11/integrazione-1-1024x576.jpg"
+             alt="Integrazione sul territorio"
+             class="service-icon-img">
+
         <h3>Integrazione sul territorio</h3>
         <p>
           Promuoviamo percorsi di inclusione attraverso la collaborazione con scuole, mediatori culturali,
@@ -1451,8 +1575,12 @@
         </p>
       </div>
 
+      <!-- SERVIZIO 2 -->
       <div class="service-card reveal delay-2">
-        <span class="service-icon" aria-hidden="true">🧭</span>
+        <img src="https://www.gabbiano.org/wp-content/uploads/2018/06/servizi.jpg"
+             alt="Orientamento ai servizi specialistici"
+             class="service-icon-img">
+
         <h3>Orientamento ai servizi specialistici</h3>
         <p>
           Accompagniamo le persone e le famiglie nell'accesso ai servizi specialistici del territorio,
@@ -1461,8 +1589,12 @@
         </p>
       </div>
 
+      <!-- SERVIZIO 3 -->
       <div class="service-card reveal delay-3">
-        <span class="service-icon" aria-hidden="true">👨‍👩‍👧</span>
+        <img src="https://www.istitutodeglinnocenti.it/sites/default/files/styles/a_img_page/public/immagini/incontri%20protetti%20IDI%201_ss.jpg.webp?itok=iDcB_1Bf"
+             alt="Incontri protetti"
+             class="service-icon-img">
+
         <h3>Incontri protetti</h3>
         <p>
           Organizziamo incontri protetti tra genitori e figli in un ambiente sicuro e accogliente,
@@ -1471,8 +1603,12 @@
         </p>
       </div>
 
-      <div class="service-card reveal delay-3">
-        <span class="service-icon" aria-hidden="true">🤝</span>
+      <!-- SERVIZIO 4 -->
+      <div class="service-card reveal delay-4">
+        <img src="https://agora.ilsole24ore.com/alleyoop/wp-content/uploads/sites/90/2016/05/affido-1.jpg"
+             alt="Affido familiare e adozione"
+             class="service-icon-img">
+
         <h3>Affido familiare e adozione</h3>
         <p>
           Offriamo sostegno e accompagnamento nei percorsi di affido familiare e adozione, affiancando
@@ -1483,6 +1619,7 @@
     </div>
   </div>
 </section>
+
 
 
  
@@ -1514,6 +1651,18 @@
       Il tuo contributo non sostiene la quotidianità delle nostre comunità, ma rende possibile quel valore aggiunto che trasforma un percorso educativo in un'esperienza ricca di opportunità, emozioni e nuovi orizzonti. Perché crescere significa anche poter vivere esperienze che lasciano un segno e aiutano a costruire il proprio futuro.
     </p>
 
+    <p class="section-text">
+      <h1><b>Come puoi sostenerci</b></h1>
+❤️ <b>Dona il tuo 5×1000</b>
+Un semplice gesto che non ti costa nulla.
+<p class="section-text">
+
+☀️ <b>Fai una donazione</b>
+Sostieni i nostri progetti con una donazione.
+
+    </p>
+    </p>
+
   </div>
 </section>
 
@@ -1528,29 +1677,26 @@
     <h2 class="section-title">Sostienici –<br>5x1000</h2>
     <div class="section-line"></div>
 
-    <p class="section-text">
-      Destinare il tuo <strong>5x1000</strong> alla Cooperativa Sociale Il Sole significa sostenere
-      ogni giorno i minori accolti in Comunità, offrendo loro protezione, ascolto e reali
-      opportunità di crescita.
-    </p>
-
     <div class="cinque-box">
-      <h3>Perché il 5x1000 è importante</h3>
-      <p>
-        Con il tuo contributo possiamo potenziare i servizi educativi, attivare nuovi laboratori,
-        rafforzare il supporto alle famiglie e garantire percorsi personalizzati per ogni ragazzo.
-      </p>
-      <p>
-        Firma nel riquadro <b>"Sostegno degli enti del Terzo Settore iscritti nel RUNTS"</b> e inserisci il nostro codice fiscale.
-      </p>
+      
+      
 
-      <!-- Bottone corretto -->
-      <button class="btn-primary" style="margin-top:1.4rem;" onclick="openModal('cinqueModal')">
-        Dona il tuo 5×1000
-      </button>
-      <a href="https://forms.gle/88mjKmyKstGh2aqX9" target="_blank" class="btn-primary" style="margin-top:.6rem;">
-        Se hai destinato il tuo 5x1000 a noi
-      </a>
+     <!-- Bottone principale grande -->
+<button class="btn-primary btn-big" style="margin-top:1.4rem;" onclick="openModal('cinqueModal')">
+  Dona il tuo 5×1000
+</button>
+
+<!-- Questionario più piccolo -->
+<a href="https://forms.gle/88mjKmyKstGh2aqX9" 
+   target="_blank" 
+   class="btn-primary btn-small" 
+   style="margin-top:.6rem;">
+  Se hai destinato il tuo 5x1000 alla cooperativa
+   <b>compila questo modulo</b>
+</a>
+
+
+
       
     </div>
 
@@ -1565,22 +1711,16 @@
   <div class="container reveal">
 
     <span class="eyebrow">Donazioni</span>
-    <h2 class="section-title">Sostieni le Comunità<br>“L’Armonia del Sole” e “I Ragazzi del Sole”</h2>
+    <h2 class="section-title">Sostieni <br>la Cooperativa</h2>
     <div class="section-line"></div>
 
-    <p class="section-text">
-      Le donazioni ci permettono di mantenere e sviluppare i servizi educativi, i percorsi
-      di inclusione e i progetti dedicati ai minori accolti. Anche un piccolo contributo
-      può fare la differenza nella vita di una persona.
-    </p>
+    
 
     <div class="donation-box">
       <h3>🌟 Dona ora in modo sicuro</h3>
-      <p>
-        Puoi sostenere i nostri progetti tramite bonifico bancario.
-        Ogni donazione è destinata direttamente ai servizi educativi e di accoglienza.
-      </p>
-      <button class="btn-primary" onclick="openModal('donazioneModal')" style="margin-top:1.4rem;">
+      
+      
+      <button class="btn-primary btn-big" onclick="openModal('donazioneModal')" style="margin-top:1.4rem;">
         Dona ora
       </button>
     </div>
@@ -1708,77 +1848,67 @@
     <h2 class="section-title">Contatti e<br>informazioni ufficiali</h2>
     <div class="section-line"></div>
 
-    <p class="section-text">
-      Per informazioni sulla Cooperativa Sociale "Il Sole", sui servizi offerti o sulle modalità
-      di inserimento e collaborazione, puoi contattarci ai seguenti recapiti ufficiali.
-    </p>
 
-    <!-- Griglia due colonne -->
-    <div class="contact-grid">
+    <!-- UNICO BOX DUST BLUE -->
+    <div class="contact-grid box">
 
-      <!-- Card recapiti fisici -->
-      <div class="card reveal delay-1">
-        <h3>📍 Recapiti</h3>
+      <div class="contact-item">
+  <div class="contact-label">📍 Indirizzo</div>
+  <div class="contact-value">
+    Vico delle Nocelle, 46, Napoli (NA)
+  </div>
+</div>
 
-        <div class="contact-item">
-          <div class="contact-label">Indirizzo</div>
-          <div class="contact-value">
-            Vico delle Nocelle, 46<br>Napoli
-          </div>
+
+      <div class="contact-item">
+  <div class="contact-label">📱 Cellulari</div>
+
+  <div class="contact-value">
+    <a href="tel:+393394466993" class="contact-link">339 4466993</a>
+    <span style="margin-left:6px; font-size:.78rem; opacity:.8;">
+      — Resp. Dott. Vittorio Fedele
+    </span>
+    <br>
+
+    <a href="tel:+393397932585" class="contact-link">339 7932585</a>
+    <span style="margin-left:6px; font-size:.78rem; opacity:.8;">
+      — Coord. Dott.ssa Valentina Carratura
+    </span>
+  </div>
+</div>
+
+
+
+      <div class="contact-item">
+        <div class="contact-label">☎️ Telefono fisso</div>
+        <div class="contact-value">
+          <a href="tel:+3908119717552" class="contact-link">081 19717552</a>
         </div>
+      </div>
 
-        <div class="contact-item">
-          <div class="contact-label">Cellulari</div>
-          <div class="contact-value">
-            <a href="tel:+393394466993" class="contact-link">339 4466993</a><br>
-            <a href="tel:+393397932585" class="contact-link">339 7932585</a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-label">Telefono fisso</div>
-          <div class="contact-value">
-            <a href="tel:+3908119717552" class="contact-link">081 19717552</a>
-          </div>
+      <div class="contact-item">
+        <div class="contact-label">✉️ Email</div>
+        <div class="contact-value">
+          <a href="mailto:coopsoc.ilsole@libero.it" class="contact-link">
+            coopsoc.ilsole@libero.it
+          </a>
         </div>
       </div>
 
-      <!-- Card email + autorizzazioni -->
-      <div class="card reveal delay-2">
-        <h3>✉️ Email e autorizzazioni</h3>
-
-        <div class="contact-item">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">
-            <a href="mailto:coopsoc.ilsole@libero.it" class="contact-link">
-              coopsoc.ilsole@libero.it
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-label">PEC</div>
-          <div class="contact-value">
-            <a href="mailto:ilsole.coop@pec.it" class="contact-link">
-              ilsole.coop@pec.it
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-label">Comunità Alloggio</div>
-          <div class="contact-value" style="font-weight:600;color:var(--navy);">
-            "L'Armonia del Sole"
-          </div>
-          <div class="contact-value" style="font-weight:600;color:var(--navy);">
-            “I Ragazzi del Sole”
-          </div>
-
+      <div class="contact-item">
+        <div class="contact-label">📨 PEC</div>
+        <div class="contact-value">
+          <a href="mailto:ilsole.coop@pec.it" class="contact-link">
+            ilsole.coop@pec.it
+          </a>
         </div>
       </div>
+
 
     </div>
 
+  </div>
+</section>
 
       <!-- ================================================================
          ▸ LAVORA CON NOI
