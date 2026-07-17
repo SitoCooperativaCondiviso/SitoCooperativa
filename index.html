@@ -967,7 +967,7 @@ a.contact-link:hover {
   
     
 .logo-img {
-      height: 115px;
+      height: 120px;
       width: auto;
       transition: var(--ease);
     }
@@ -985,9 +985,9 @@ a.contact-link:hover {
     .logo-text small {
       display: block;
       font-family: var(--font-body);
-      font-size: .80rem;
+      font-size: .90rem;
       font-weight: 600;
-      text-transform: uppercase;
+      text-transform: none !important;
       letter-spacing: .15em;
       color: #FFFFFF;
     }
@@ -1260,6 +1260,7 @@ a.contact-link:hover {
 #lavora .btn-primary {
   background: var(--sun);
   color: var(--navy);
+
   padding: .9rem 1.4rem;
   border-radius: var(--radius);
   font-weight: 600;
@@ -1351,6 +1352,19 @@ a.contact-link:hover {
     margin-bottom: 1.2rem;
   }
 }
+.call-img {
+  display: flex;
+  margin-top: +20px; /* avvicina l’immagine ai bottoni */
+  justify-content: flex-end; /* sempre a destra */
+  width: 100%;
+}
+
+.call-img img {
+  width: 350px; /* molto grande */
+  max-width: 80vw; /* si adatta bene su mobile */
+  cursor: pointer;
+}
+
 
 
   </style>
@@ -1371,7 +1385,7 @@ a.contact-link:hover {
         <img src="https://i.ibb.co/bRN6Mg0m/Progetto-senza-titolo-10.png"
              class="logo-img" alt="Logo Cooperativa Sociale Il Sole" loading="lazy">
         <span class="logo-text">
-          Il Sole
+          IL SOLE
           <small>Cooperativa Sociale</small>
         </span>
       </a>
@@ -1382,7 +1396,7 @@ a.contact-link:hover {
           <li><a href="#chi-siamo">Chi siamo</a></li>
           <li><a href="#missione">Missione</a></li>
           <li><a href="#servizi">Servizi</a></li>
-          <li><a href="#cinque">Sostienici</a></li>
+          <li><a href="#sostienici">Sostienici</a></li>
           <li><a href="#lavora">Lavora con Noi</a></li>
           <li><a href="#contatti">Contatti</a></li>
           
@@ -1399,7 +1413,7 @@ a.contact-link:hover {
     <a href="#chi-siamo"     class="mobile-link">Chi siamo</a>
     <a href="#missione"      class="mobile-link">Missione</a>
     <a href="#servizi"       class="mobile-link">Servizi</a>
-    <a href="#cinque" class="mobile-link">Sostienici</a>
+    <a href="#sostienici" class="mobile-link">Sostienici</a>
     <a href="#lavora"      class="mobile-link">Lavora con Noi</a>
     <a href="#contatti"      class="mobile-link">Contatti</a>
     
@@ -1428,15 +1442,18 @@ a.contact-link:hover {
         </p>
 
         <div class="hero-actions hero-spacing">
-  <a href="tel:3394466993" class="btn-primary btn-big">Chiama ora</a>
-</div>
+  <a href="tel:3394466993" class="call-img">
+  <img src="https://i.ibb.co/jvTMSFG4/Senza-titolo-400-x-200-px.png" alt="Chiama ora">
+</a>
 
-<div class="hero-actions hero-spacing">
-  <a href="#sostienici" class="btn-primary">Sostienici</a>
 </div>
 
 <div class="hero-actions hero-spacing">
   <a href="#sostienici" class="btn-primary">Dona il tuo 5x1000</a>
+</div>
+
+<div class="hero-actions hero-spacing">
+  <a href="#sostienici" class="btn-primary">Donazione Liberale</a>
 </div>
 
 
@@ -1463,10 +1480,13 @@ a.contact-link:hover {
       <p class="section-text">
         La Cooperativa Sociale IL SOLE, fondata nel gennaio 2010, opera con l'obiettivo di offrire accoglienza, tutela e percorsi educativi rivolti a minori che vivono situazioni di fragilità personale, familiare o sociale.
       </p>
-
+      
       <p class="section-text">
-        Da oltre quindici anni rappresentiamo un punto di riferimento nel settore socio-educativo, promuovendo interventi fondati sul rispetto della persona, sulla professionalità e sulla costruzione di relazioni significative.
-      </p>
+  Da oltre quindici anni rappresentiamo un punto di riferimento nel settore socio&#8209;educativo, promuovendo interventi fondati sul rispetto della persona, sulla professionalità e sulla costruzione di relazioni significative.
+</p>
+
+
+
 
       <p class="section-text">
         Gestiamo due comunità alloggio per minori, "L'ARMONIA DEL SOLE" e "I RAGAZZI DEL SOLE" entrambe situate nel centro di Napoli.
@@ -1666,9 +1686,6 @@ Sostieni i nostri progetti con una donazione.
 <section id="cinque" class="bg-white">
   <div class="container reveal">
 
-    <span class="eyebrow">Donazioni</span>
-    <h2 class="section-title">Sostienici –<br>5x1000</h2>
-    <div class="section-line"></div>
 
     <div class="cinque-box">
       
@@ -1703,9 +1720,6 @@ Sostieni i nostri progetti con una donazione.
 <section id="donazioni" class="bg-cream">
   <div class="container reveal">
 
-    <span class="eyebrow">Donazioni</span>
-    <h2 class="section-title">Sostieni <br>la Cooperativa</h2>
-    <div class="section-line"></div>
 
     
 
@@ -1770,19 +1784,19 @@ Sostieni i nostri progetti con una donazione.
 
     <div class="modal-content">
       <p>
+       <strong>Nella tua dichiarazione dei redditi </strong>(Modello 730,  Redditi, CU):
+      </p>
+      <p>
         Firma nel riquadro <strong>“Sostegno degli enti del Terzo Settore iscritti nel RUNTS”</strong>.
       </p>
       <p>
         Inserisci il codice fiscale della Cooperativa Sociale IL SOLE:
       </p>
 
-      <p style="font-size:1.4rem; font-weight:700; color:var(--navy);">
+      <p style="font-size:2rem; font-weight:700; color:var(--navy);">
         06804681218
       </p>
 
-      <p>
-        Il tuo gesto permette di sostenere progetti educativi, attività culturali, laboratori e percorsi di crescita per i minori accolti.
-      </p>
     </div>
 
     
@@ -1846,25 +1860,30 @@ Sostieni i nostri progetti con una donazione.
     <div class="contact-grid box">
 
       <div class="contact-item">
-  <div class="contact-label">📍 Indirizzo</div>
+
   <div class="contact-value">
-    Vico delle Nocelle, 46, Napoli (NA)
+   📍 Vico delle Nocelle, 46, Napoli (NA)
   </div>
 </div>
 
 
       <div class="contact-item">
-  <div class="contact-label">📱 Cellulari</div>
+<div class="contact-item">
+        <div class="contact-value">
+          <a href="tel:+3908119717552" class="contact-link">☎️ 081 19717552</a>
+        </div>
+      </div>
+
 
   <div class="contact-value">
-    <a href="tel:+393394466993" class="contact-link">339 4466993</a>
-    <span style="margin-left:6px; font-size:.78rem; opacity:.8;">
+    <a href="tel:+393394466993" class="contact-link">📱 339 4466993</a>
+    <span style="margin-left:6px; font-size:.70rem; opacity:.8;">
       — Resp. Dott. Vittorio Fedele
     </span>
     <br>
 
-    <a href="tel:+393397932585" class="contact-link">339 7932585</a>
-    <span style="margin-left:6px; font-size:.78rem; opacity:.8;">
+    <a href="tel:+393397932585" class="contact-link">📱 339 7932585</a>
+    <span style="margin-left:6px; font-size:.70rem; opacity:.8;">
       — Coord. Dott.ssa Valentina Carratura
     </span>
   </div>
@@ -1872,27 +1891,20 @@ Sostieni i nostri progetti con una donazione.
 
 
 
-      <div class="contact-item">
-        <div class="contact-label">☎️ Telefono fisso</div>
-        <div class="contact-value">
-          <a href="tel:+3908119717552" class="contact-link">081 19717552</a>
-        </div>
-      </div>
+      
 
       <div class="contact-item">
-        <div class="contact-label">✉️ Email</div>
         <div class="contact-value">
           <a href="mailto:coopsoc.ilsole@libero.it" class="contact-link">
-            coopsoc.ilsole@libero.it
+            ✉️coopsoc.ilsole@libero.it
           </a>
         </div>
       </div>
 
       <div class="contact-item">
-        <div class="contact-label">📨 PEC</div>
         <div class="contact-value">
           <a href="mailto:ilsole.coop@pec.it" class="contact-link">
-            ilsole.coop@pec.it
+            📨 ilsole.coop@pec.it
           </a>
         </div>
       </div>
@@ -1918,24 +1930,12 @@ Sostieni i nostri progetti con una donazione.
       <section id="lavora" class="bg-cream" style="padding:3rem 0;">
   <div class="container">
     
-    <h2 class="section-title">Lavora con noi</h2>
-    <p class="section-subtitle">
-      La Cooperativa Sociale IL SOLE accoglie persone motivate, responsabili e desiderose di contribuire 
-      alla crescita del territorio. Crediamo nel valore umano, nella formazione continua e nella collaborazione 
-      come strumenti fondamentali per offrire servizi di qualità alle famiglie e alla comunità.
-    </p>
-
-    <p class="section-text">
-      Se vuoi proporre la tua candidatura, puoi inviare una <strong>domanda spontanea</strong> tramite il nostro 
-      modulo ufficiale. Ti chiediamo di compilare tutti i campi richiesti e allegare il tuo Curriculum Vitae 
-      in formato PDF. Ogni candidatura viene valutata con attenzione dal nostro team.
-    </p>
 
     <!-- Google Form -->
     <a href="https://forms.gle/nMQF9veBc8DVYrDs9" 
        target="_blank" 
        class="btn-primary" 
-       style="margin-top:1.2rem; display:inline-block;">
+       >
       Compila il modulo di candidatura
     </a>
 
@@ -1953,7 +1953,7 @@ Sostieni i nostri progetti con una donazione.
   <footer>
     <div class="footer-logo">Il Sole</div>
     <small style="color:rgba(255,255,255,.45);font-size:.8rem;">
-      Cooperativa Sociale · Comunità Alloggio
+      Cooperativa Sociale
     </small>
 
     <nav class="footer-links" aria-label="Link footer">
