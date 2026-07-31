@@ -1392,7 +1392,36 @@ a.contact-link:hover {
   letter-spacing: .02em;               /* leggermente più compatto */
 }
 
+.cta-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;   /* opzionale */
+  margin-bottom: 2rem; /* opzionale */
+  text-align: center;
+}
 
+/* Wrapper generale */
+.btn-desktop-boost {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* SOLO da PC */
+@media (min-width: 1024px) {
+
+  /* Bottone grande: più grande */
+  .btn-desktop-boost .btn-big {
+    padding: 1.6rem 3.4rem;   /* più pieno */
+    font-size: 1.25rem;       /* più grande */
+  }
+
+  /* Bottone piccolo: più piccolo */
+  .btn-desktop-boost .btn-small {
+    padding: 0.6rem 1.2rem;   /* più compatto */
+    font-size: 0.85rem;       /* più piccolo */
+  }
+}
 
   </style>
 </head>
@@ -1699,22 +1728,27 @@ a.contact-link:hover {
     ❤️ <b>Dona il tuo 5×1000</b><br>
     Un semplice gesto che non ti costa nulla.
 
-    <button class="btn-primary btn-big"
-            onclick="openModal('cinqueModal')"
-            style="margin-top:1.4rem; margin-bottom:1.4rem;">
-      Dona il tuo 5×1000
-    </button>
+    <div class="btn-desktop-boost">
+  <button class="btn-primary btn-big"
+          onclick="openModal('cinqueModal')"
+          style="margin-top:1.4rem; margin-bottom:1.4rem;">
+    Dona il tuo 5×1000
+  </button>
+</div>
+
     
     
 
     <!-- Questionario più piccolo -->
-    <a href="https://forms.gle/88mjKmyKstGh2aqX9" 
-       target="_blank" 
-       class="btn-primary btn-small" 
-       style="margin-top:.6rem;">
-      Se hai destinato il tuo 5×1000 alla cooperativa
-      <b>compila questo modulo</b>
-    </a>
+    <div class="btn-desktop-boost">
+  <a href="https://forms.gle/88mjKmyKstGh2aqX9" 
+     target="_blank" 
+     class="btn-primary btn-small"
+     style="margin-top:.6rem;">
+    Se hai destinato il tuo 5×1000 alla cooperativa
+    <b>compila questo modulo</b>
+  </a>
+</div>
 
     <br><br>
 
@@ -1989,12 +2023,14 @@ a.contact-link:hover {
     
 
     <!-- Google Form -->
-    <a href="https://forms.gle/nMQF9veBc8DVYrDs9" 
-       target="_blank" 
-       class="btn-primary" 
-       >
-      Compila il modulo di candidatura
-    </a>
+    <div class="cta-center">
+  <a href="https://forms.gle/nMQF9veBc8DVYrDs9" 
+     target="_blank" 
+     class="btn-primary">
+    Compila il modulo di candidatura
+  </a>
+</div>
+
 
   </div>
 </section>
