@@ -654,6 +654,19 @@
       line-height: 1.75;
     }
 
+    @media (max-width:768px){
+
+  .service-card h3{
+      font-size: 0.95rem !important;
+  }
+
+  .service-card p{
+      font-size: 0.85rem !important;
+      line-height: 1.5 !important;
+  }
+
+}
+
     /* ================================================================
        ▸ MISSIONE EDUCATIVA
     ================================================================ */
@@ -816,7 +829,7 @@ a.contact-link:hover {
     ================================================================ */
     footer {
       background: var(--navy);
-      padding: 2.4rem 5vw;
+      padding: 1rem 5vw 2.5rem 5vw; 
       text-align: center;
     }
 
@@ -825,11 +838,11 @@ a.contact-link:hover {
       font-size: 1.6rem;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: .4rem;
+      margin-bottom: 0;
     }
 
     .footer-copy {
-      font-size: .8rem;
+      font-size: .7rem;
       color: rgba(255,255,255,.45);
       margin-top: .5rem;
     }
@@ -837,7 +850,7 @@ a.contact-link:hover {
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 1.4rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
       margin: 1rem 0;
     }
@@ -925,33 +938,42 @@ a.contact-link:hover {
 /* ================================================================
    ▸ RESPONSIVE – MOBILE (≤ 600px)
 ================================================================ */
-/* ================================================================
-   ▸ RESPONSIVE – MOBILE (≤ 600px)
-================================================================ */
+
 @media (max-width: 600px) {
 
 
   /* MENU MOBILE IN BASSO */
-  .mobile-menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--navy);
-    padding: 20px 10px;
-    display: flex!important;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #ddd;
-    z-index: 9999;
-  }
+ .mobile-menu {
+  position: fixed !important; /* Forza il menu a rimanere incollato allo schermo */
+  bottom: 0 !important;       /* Impedisce a qualsiasi script di spingerlo verso il basso o nasconderlo */
+  left: 0 !important;
+  width: 100%;
+  background: var(--navy);
+  padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 99999 !important;  /* Alzato il livello per essere sicuri che non finisca mai sotto altri elementi */
+  box-sizing: border-box;
+  
+  /* Blocca eventuali animazioni di sparizione indesiderate imposte da altri script */
+  transform: translateZ(0); 
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
   .mobile-menu .mobile-link {
-    font-size: 0.7rem;
-    color: #ffffff;
-    text-decoration: none;
-    white-space: nowrap;
-  }
+  font-size: 0.65rem;                   /* Rimpiccioliti sotto il valore di partenza per massima discrezione */
+  font-family: var(--font-display);     
+  font-weight: 300;                     /* Tratto Light: sottilissimo, leggero e per nulla marcato */
+  letter-spacing: 0.06em;               /* Lettere più spaziate tra loro, tipico del design Luxury/Elegante */
+  color: rgb(255, 255, 255);     /* Bianco molto attenuato (opaco al 45%), si fonde morbidamente con lo sfondo scuro */
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .3s ease;           /* Transizione fluida sul colore */
+}
+
 
   /* NASCONDE IL MENU DESKTOP */
   .nav-links {
@@ -979,7 +1001,7 @@ a.contact-link:hover {
 
     .logo-text {
       font-family: var(--font-display);
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 650;
       color: #f7ec44;
       line-height: 1.05;
@@ -994,7 +1016,7 @@ a.contact-link:hover {
   text-transform: none !important;
   letter-spacing: .15em;
   color: #FFFFFF;
-  text-align: right; /* allinea il testo a destra */
+  text-align: cener; /* allinea il testo a destra */
 }
 
 
@@ -1221,6 +1243,7 @@ a.contact-link:hover {
 ================================================================ */
 @media (max-width: 600px) {
   .modal-box .copy-row {
+    font-size: .9rem ;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -1372,26 +1395,22 @@ a.contact-link:hover {
 }
 
 .call-img img {
-  width: 350px; /* molto grande */
-  max-width: 80vw; /* si adatta bene su mobile */
+  width: 300px; /* molto grande */
+  max-width: 70vw; /* si adatta bene su mobile */
   cursor: pointer;
 }
 
 .h3-responsive {
-  white-space: nowrap;                 /* evita il capo */
-  font-size: clamp(0.50rem, 3.5vw, 1.6rem); /* leggermente più piccolo */
-  max-width: 100%;                     /* non esce dal contenitore */
-  overflow: hidden;                    /* evita overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-.h3-responsive.h3-small {
-  white-space: nowrap;                 /* mai a capo */
-  font-size: clamp(1rem, 3vw, 1.4rem); /* più piccolo e fluido */
-  max-width: 100%;                     /* non esce dal contenitore */
-  overflow: hidden;                    /* evita overflow */
-  letter-spacing: .02em;               /* leggermente più compatto */
+@media (max-width: 768px) {
+  .h3-responsive {
+    font-size: 0.95rem;
+  }
 }
-
 .cta-center {
   display: flex;
   justify-content: center;
@@ -1649,7 +1668,7 @@ a.contact-link:hover {
              alt="Orientamento ai servizi specialistici"
              class="service-icon-img">
 
-        <h3 class="h3-responsive h3-small">Orientamento ai servizi specialistici</h3>
+        <h3 class="h3-responsive">Orientamento ai servizi specialistici</h3>
 
         <p>
           Accompagniamo le persone e le famiglie nell'accesso ai servizi specialistici del territorio,
@@ -1678,7 +1697,7 @@ a.contact-link:hover {
              alt="Affido familiare e adozione"
              class="service-icon-img">
 
-        <h3 class="h3-responsive h3-small">Affido familiare e adozione</h3>
+        <h3 class="h3-responsive">Affido familiare e adozione</h3>
         <p>
           Offriamo sostegno e accompagnamento nei percorsi di affido familiare e adozione, affiancando
           le famiglie e collaborando con i servizi territoriali nelle diverse fasi del percorso.
@@ -1709,7 +1728,11 @@ a.contact-link:hover {
     </p>
 
     <p class="section-text">
-      Le attività quotidiane e l'accoglienza nelle nostre comunità sono garantite dall'impegno della Cooperativa Sociale IL SOLE e dai servizi previsti. Il tuo sostegno ci permette di andare oltre, offrendo ai minori opportunità che arricchiscono il loro percorso educativo e personale.
+      Le attività quotidiane e l'accoglienza nelle nostre comunità sono garantite dall'impegno della Cooperativa Sociale IL SOLE e dai servizi previsti.
+    </p>
+
+    <p class="section-text">
+      Il tuo sostegno ci permette di andare oltre, offrendo ai minori opportunità che arricchiscono il loro percorso educativo e personale.
     </p>
 
     <p class="section-text">
@@ -1723,15 +1746,17 @@ a.contact-link:hover {
    <section>
   <div class="section-text">
 
-    <h1><b>Come puoi sostenerci</b></h1>
+    <h1 style="white-space:nowrap; font-size:1.8rem;">
+  <b>Come puoi sostenerci</b>
+</h1>
 
-    ❤️ <b>Dona il tuo 5×1000</b><br>
+    <span style="font-size: 21px;">❤️ <b>Dona il tuo 5×1000</b></span><br>
     Un semplice gesto che non ti costa nulla.
 
     <div class="btn-desktop-boost">
   <button class="btn-primary btn-big"
           onclick="openModal('cinqueModal')"
-          style="margin-top:1.4rem; margin-bottom:1.4rem;">
+         style="display:block; margin:1.4rem auto;">
     Dona il tuo 5×1000
   </button>
 </div>
@@ -1740,19 +1765,11 @@ a.contact-link:hover {
     
 
     <!-- Questionario più piccolo -->
-    <div class="btn-desktop-boost">
-  <a href="https://forms.gle/88mjKmyKstGh2aqX9" 
-     target="_blank" 
-     class="btn-primary btn-small"
-     style="margin-top:.6rem;">
-    Se hai destinato il tuo 5×1000 alla cooperativa
-    <b>compila questo modulo</b>
-  </a>
-</div>
+    <div class="btn-desktop-boost"> <a href="https://forms.gle/88mjKmyKstGh2aqX9" target="_blank" class="btn-primary btn-small" style="margin-top:.6rem;"> Se hai destinato il tuo 5×1000<br> alla Cooperativa sociale<br> <b>compila questo modulo</b> </a> </div>
 
     <br><br>
 
-    ☀️ <b>Fai una donazione liberale</b><br>
+    <span style="font-size: 21px;">☀️ <b>Fai una donazione liberale</b></span><br>
     Sostieni i nostri progetti con una donazione.
 
     <div class="container reveal">
@@ -1761,7 +1778,7 @@ a.contact-link:hover {
 
         <button class="btn-primary btn-big"
                 onclick="openModal('donazioneModal')"
-                style="margin-top:1.4rem;">
+                style="display:block; margin:1.4rem auto 0;">
           Dona ora
         </button>
       </div>
@@ -1794,8 +1811,8 @@ a.contact-link:hover {
       </div>
 
       <div class="copy-row">
-        <p><strong>IBAN</strong><br>IT57 R030 6909 6061 0000 0017 320</p>
-        <button class="copy-btn" data-copy="IT57 R030 6909 6061 0000 0017 320">Copia</button>
+        <p><strong>IBAN</strong><br>IT57R0306909606100000017320</p>
+        <button class="copy-btn" data-copy="IT57R0306909606100000017320">Copia</button>
       </div>
 
       <div class="copy-row">
@@ -1911,7 +1928,7 @@ a.contact-link:hover {
       <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
     </svg>
   </span>
-  Vico delle Nocelle, 46, Napoli (NA)
+  Vico delle Nocelle, 46 - Napoli
 </div>
 
 </div>
@@ -1934,41 +1951,50 @@ a.contact-link:hover {
 
 <div class="contact-value">
 
-  <a href="tel:+393394466993" class="contact-link">
-    <span class="icon-badge">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-           class="bi bi-phone" viewBox="0 0 16 16">
-        <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-        <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-      </svg>
-    </span>
-    339.446.6993
-  </a>
-  <span style="margin-left:6px; font-size:.70rem; opacity:.8;">
-    Resp. Dott. Vittorio Fedele
-  </span>
 
-  <br>
 
-  <a href="tel:+393397932585" class="contact-link">
-    <span class="icon-badge">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-           class="bi bi-phone" viewBox="0 0 16 16">
-        <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-        <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-      </svg>
-    </span>
-    339.793.2585
-  </a>
-  <span style="margin-left:6px; font-size:.70rem; opacity:.8;">
-    Resp. Dott.ssa Valentina Carratura
+  <span style="display:block; margin-bottom:6px; font-size:1rem; opacity:.9; font-weight:500;">
+  Resp. Dott. Vittorio Fedele
+</span>
+
+  <span class="icon-badge">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="16" height="16"
+         fill="currentColor"
+         viewBox="0 0 16 16">
+      <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+      <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+    </svg>
   </span>
+  <a href="tel:+393394466993" style="font-size:1.05rem; font-weight:600; color:inherit; text-decoration:none;">
+  339.446.6993
+</a>
+
+</a>
+
+<br> </br>
+<span style="display:block; margin-bottom:6px; font-size:1rem; opacity:.9; font-weight:500;">
+  Resp. Dott.ssa Valentina Carratura
+</span>
+
+<a href3397932585
+  <span class="icon-badge">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="16" height="16"
+         fill="currentColor"
+         viewBox="0 0 16 16">
+      <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+      <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+    </svg>
+  </span>
+  <a href="tel:+393397932585" style="font-size:1.05rem; font-weight:600; color:inherit; text-decoration:none;">
+  339.793.2585
+</a>
+
+</a>
 
 </div>
-
-
-
-      
+<br>
 
       <div class="contact-item">
   <div class="contact-value">
@@ -2060,7 +2086,7 @@ a.contact-link:hover {
 
     <p class="footer-copy">
       © <span id="year"></span> Il Sole – Cooperativa Sociale ·
-      Vico delle Nocelle 46, 80136 Napoli ·
+      Vico delle Nocelle, 46 - Napoli ·
       Tutti i diritti riservati.
     </p>
   </footer>
