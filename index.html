@@ -245,31 +245,37 @@
     }
 
     /* ---- Logo ---- */
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  
+  /* SPOSTAMENTO DI 10PX A SINISTRA */
+  transform: translateX(-7px); 
+}
 
-    .logo-img {
-      height: 130px;
-      width: auto;
-      transition: var(--ease);
-    }
+.logo-img {
+  height: 130px;
+  width: auto;
+  transition: var(--ease);
+}
 
-    .logo-img:hover { transform: scale(1.04); }
+.logo-img:hover { 
+  /* Mantiene lo spostamento a sinistra di 10px anche durante l'ingrandimento */
+  transform: translateX(-7px) scale(1.04); 
+}
 
-    .logo-text {
-      font-family: var(--font-display);
-      font-size: 4.10rem;
-      font-weight: 650;
-      color: #f7ec44;
-      line-height: 1.05;
-      letter-spacing: .5px;
-    }
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 4.10rem;
+  font-weight: 650;
+  color: #f7ec44;
+  line-height: 1.05;
+  letter-spacing: .5px;
+}
 
-    .logo-text small {
+.logo-text small {
   display: block;
   font-family: var(--font-body);
   font-size: .85rem;
@@ -277,8 +283,10 @@
   text-transform: none !important;
   letter-spacing: .15em;
   color: #FFFFFF;
-  text-align: right; /* allinea il testo a destra */
+  text-align: right;
 }
+
+
 
 
     /* ---- Link di navigazione (visibili su desktop) ---- */
@@ -1402,6 +1410,7 @@ a.contact-link:hover {
 
 .h3-responsive {
   white-space: nowrap;
+  text-align: center;  
   overflow: hidden;
   max-width: 100%;
 }
@@ -1409,6 +1418,7 @@ a.contact-link:hover {
 @media (max-width: 768px) {
   .h3-responsive {
     font-size: 0.95rem;
+    text-align: center;  
   }
 }
 .cta-center {
@@ -1655,7 +1665,7 @@ a.contact-link:hover {
 
         <h3 class="h3-responsive">Integrazione sul territorio</h3>
 
-        <p style="font-size: 0.90rem;">
+        <p style="font-size: 0.90rem;text-align: center;  ">
           Promuoviamo percorsi di inclusione attraverso la collaborazione con scuole, mediatori culturali,
           gruppi sportivi, oratori e altre realtà del territorio, favorendo la partecipazione, la
           socializzazione e la crescita personale.
@@ -1670,7 +1680,7 @@ a.contact-link:hover {
 
         <h3 class="h3-responsive">Orientamento ai servizi specialistici</h3>
 
-        <p style="font-size: 0.90rem;">
+        <p style="font-size: 0.90rem;text-align: center;  ">
           Accompagniamo le persone e le famiglie nell'accesso ai servizi specialistici del territorio,
           facilitando il contatto con professionisti quali logopedisti, psicoterapeuti, psicomotricisti,
           fisioterapisti e altri specialisti, in base alle esigenze specifiche.
@@ -1684,7 +1694,7 @@ a.contact-link:hover {
              class="service-icon-img">
 
         <h3 class="h3-responsive">Incontri protetti</h3>
-        <p style="font-size: 0.90rem;">
+        <p style="font-size: 0.90rem;text-align: center;  ">
           Organizziamo incontri protetti tra genitori e figli in un ambiente sicuro e accogliente,
           garantendo il supporto educativo necessario e collaborando con i servizi competenti per
           tutelare il benessere del minore.
@@ -1698,7 +1708,7 @@ a.contact-link:hover {
              class="service-icon-img">
 
         <h3 class="h3-responsive">Affido familiare e adozione</h3>
-        <p style="font-size: 0.90rem;">
+        <p style="font-size: 0.90rem;text-align: center;  ">
           Offriamo sostegno e accompagnamento nei percorsi di affido familiare e adozione, affiancando
           le famiglie e collaborando con i servizi territoriali nelle diverse fasi del percorso.
         </p>
@@ -1748,6 +1758,7 @@ a.contact-link:hover {
 
     <h1 style="white-space:nowrap; font-size:1.8rem;">
   <b>Come puoi sostenerci</b>
+  <br> </br>
 </h1>
 
     <span style="font-size: 21px;">❤️ <b>Dona il tuo 5×1000</b></span><br>
@@ -1967,7 +1978,7 @@ a.contact-link:hover {
     </svg>
   </span>
   <a href="tel:+393394466993" style="font-size:1.05rem; font-weight:600; color:inherit; text-decoration:none;">
-  339.446.6993
+  339.44.66.993
 </a>
 
 </a>
@@ -1988,7 +1999,7 @@ a.contact-link:hover {
     </svg>
   </span>
   <a href="tel:+393397932585" style="font-size:1.05rem; font-weight:600; color:inherit; text-decoration:none;">
-  339.793.2585
+  339.79.32.585
 </a>
 
 </a>
